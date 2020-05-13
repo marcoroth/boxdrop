@@ -1,0 +1,15 @@
+<li class="list-group-item">
+  <% if folder %>
+    <% if folder&.parent.present? %>
+      <%= link_to folder_path(folder.parent) do %>
+        <div class="row"><div class="col">..</div></div>
+      <% end %>
+    <% else %>
+      <%= link_to root_path do %>
+        <div class="row"><div class="col">..</div></div>
+      <% end %>
+    <% end %>
+  <% else %>
+    &nbsp;
+  <% end %>
+</li>

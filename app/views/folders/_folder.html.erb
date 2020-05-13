@@ -1,0 +1,9 @@
+<% current_folder ||= nil %>
+<% folders ||= [] %>
+<% documents ||= [] %>
+
+<ul class="list-group">
+  <%= render partial: 'folders/parent_folder', locals: { folder: current_folder } %>
+  <%= render partial: 'folders/folder_item', collection: folders, as: :folder %>
+  <%= render partial: 'documents/document_item', collection: documents, as: :document %>
+</ul>

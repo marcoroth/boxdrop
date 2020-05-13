@@ -1,0 +1,18 @@
+<li class="list-group-item">
+  <%= link_to folder_path(folder) do %>
+    <div class="row">
+      <div class="col-auto">
+        <i class="far <% if @selected_folder == folder %>fa-check-square <%else %>fa-square<% end %>" data-id="<%= folder.id %>" data-reflex="click->FolderReflex#select_folder" style="line-height: 30px"></i>
+      </div>
+      <div class="col-auto">
+        <i class="fa fa-folder fa-2x" style="color: #9ecdfa"></i>
+      </div>
+      <div class="col" style="font-size: 14px; line-height: 30px">
+        <div style="font-size: 14px"><%= folder.name %></div>
+      </div>
+      <div class="col d-none d-sm-block text-muted" style="font-size: 14px; line-height: 30px">
+        <div style="font-size: 14px"><%= folder.created_at.iso8601 %></div>
+      </div>
+    </div>
+  <% end %>
+</li>

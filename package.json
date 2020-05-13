@@ -1,0 +1,21 @@
+{
+  "name": "dropbox_clone",
+  "private": true,
+  "dependencies": {
+    "@fortawesome/fontawesome-free": "^5.13.0",
+    "@rails/actioncable": "^6.0.0",
+    "@rails/activestorage": "^6.0.0",
+    "@rails/ujs": "^6.0.0",
+    "@rails/webpacker": "4.2.2",
+    "bootstrap": "^4.5.0",
+    "cable_ready": "^4.1.2",
+    "popper.js": "^1.16.1",
+    "stimulus": "^1.1.1",
+    "stimulus_reflex": "^3.2.1",
+    "turbolinks": "^5.2.0"
+  },
+  "version": "0.1.0",
+  "devDependencies": {
+    "webpack-dev-server": "^3.11.0"
+  }
+}

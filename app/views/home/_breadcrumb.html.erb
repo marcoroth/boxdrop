@@ -1,0 +1,23 @@
+<% document ||= nil %>
+<% folder ||= document&.folder %>
+<% parents = get_items_of_folder(folder) %>
+
+<nav aria-label="breadcrumb">
+  <ol class="breadcrumb bg-light">
+    <li class="breadcrumb-item">
+      <%= link_to "Home", root_path %>
+    </li>
+
+    <% parents.each do |folder| %>
+      <li class="breadcrumb-item">
+        <%= link_to folder.name, folder_path(folder) %>
+      </li>
+    <% end %>
+
+    <% if document %>
+      <li class="breadcrumb-item">
+        <%= document.name %>
+      </li>
+    <% end %>
+  </ol>
+</nav><br>
