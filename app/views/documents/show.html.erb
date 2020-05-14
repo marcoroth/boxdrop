@@ -1,6 +1,17 @@
 <%= render partial: 'home/breadcrumb', locals: { document: @document } %>
 
-<div class="container bg-light text-center" style="padding: 100px">
+<div class="container bg-light text-center" style="padding: 100px" data-reflex="click->DocumentReflex#edit" data-id="<%= @document.id %>">
   <i class="fa fa-file fa-5x text-muted"></i><br/><br/>
-  <h4 class="text-muted"><%= @document.name %></h4>
+
+  <% if @editing_document %>
+    <input
+      type="text"
+      class="form-control text-center"
+      data-reflex="change->DocumentReflex#change_name"
+      value="<%= @document.name %>"
+      data-id="<%= @document.id %>"
+    >
+  <% else %>
+    <h4 class="text-muted"><%= @document.name %></h4>
+  <% end %>
 </div>

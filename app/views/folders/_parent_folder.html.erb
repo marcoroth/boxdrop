@@ -1,8 +1,23 @@
-<li class="list-group-item">
+<li class="list-group-item folder-item parent-folder-item" id="<%= dom_id(folder.parent) if folder&.parent %>" data-folder-id="<%= folder&.parent&.id %>"
+  data-action="
+    drop@window->folders#drop
+    dragstart@window->folders#dragstart
+    dragover@window->folders#dragover
+    dragenter@window->folders#dragenter
+    dragend@window->folders#dragend
+    dragleave@window->folders#dragleave
+  ">
   <% if folder %>
     <% if folder&.parent.present? %>
       <%= link_to folder_path(folder.parent) do %>
-        <div class="row"><div class="col">..</div></div>
+        <div class="row" data-folder-id="<%= folder.parent&.id %>" data-action="
+        drop@window->folders#drop
+        dragstart@window->folders#dragstart
+        dragover@window->folders#dragover
+        dragenter@window->folders#dragenter
+        dragend@window->folders#dragend
+        dragleave@window->folders#dragleave
+        "><div class="col">..</div></div>
       <% end %>
     <% else %>
       <%= link_to root_path do %>

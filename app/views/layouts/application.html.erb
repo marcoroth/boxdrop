@@ -5,6 +5,7 @@
     <title>DropboxClone</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
@@ -14,15 +15,17 @@
   <body>
     <div class="container"><br/>
       <nav class="navbar navbar-light bg-light">
-        <%= link_to root_path, class: 'navbar-brand' do %>
-          <svg class="maestro-nav__logo" aria-label="Start" xmlns="http://www.w3.org/2000/svg" role="img" width="32px" height="32px" viewBox="0 0 32 32" style="fill:"><title></title><path fill="blue" d="M8 2.4l8 5.1-8 5.1-8-5.1 8-5.1zm16 0l8 5.1-8 5.1-8-5.1 8-5.1zM0 17.7l8-5.1 8 5.1-8 5.1-8-5.1zm24-5.1l8 5.1-8 5.1-8-5.1 8-5.1zM8 24.5l8-5.1 8 5.1-8 5.1-8-5.1z"></path></svg>
-          <span style="margin-left: 10px">
-            Dropbox
-          </span>
+        <%= link_to root_path, class: 'col-auto p-0' do %>
+          <i class="fab fa-dropbox" style="color: blue; font-size: 32px"></i>
         <% end %>
+        <%= link_to "Dropbox", root_path, class: 'navbar-brand col' %>
       </nav><br/>
 
-      <%= yield %>
+      <div data-controller="folders">
+        <div data-action="drop@window->folders#drop dragstart@window->folders#dragstart dragover@window->folders#dragover">
+          <%= yield %>
+        </div>
+      </div>
     </div>
   </body>
 </html>

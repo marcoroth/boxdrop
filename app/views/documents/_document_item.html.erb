@@ -1,20 +1,37 @@
-<li class="list-group-item">
-  <%= link_to document_path(document) do %>
+<li class="list-group-item" draggable="true" data-id="<%= document.id %>" <% if @selected_elements.include? document %> style="background: #f7f9fa" <% end %> id="<%= dom_id(document) %>">
+  <%#= link_to document_path(document) do %>
     <div class="row">
       <div class="col-auto">
-        <i class="far <% if @selected_document == document %>fa-check-square <%else %>fa-square<% end %>" data-id="<%= document.id %>" data-reflex="click->FolderReflex#select_document" style="line-height: 30px"></i>
+        <i class="far <% if @selected_elements.include? document %>fa-check-square <%else %>fa-square<% end %>" data-id="<%= document.id %>" data-reflex="click->FolderReflex#select_document" style="line-height: 30px"></i>
       </div>
       <div class="col-auto">
         <i class="fa fa-file fa-2x" style="color: lightgray"></i>
       </div>
       <div class="col" style="font-size: 14px; line-height: 30px; margin-left: 7px">
         <div style="font-size: 14px" data-reflex="dblclick->FolderReflex#select_document" data-id="<%= document.id %>">
-          <%= document.name %>
+          <% if @editing_document == document %>
+            <input
+              type="text"
+              class="form-control"
+              data-reflex="change->DocumentReflex#change_name"
+              value="<%= document.name %>"
+              data-id="<%= document.id %>"
+            >
+          <% else %>
+            <%= link_to document.name, document %>
+          <% end %>
         </div>
       </div>
       <div class="col d-none d-sm-block text-muted" style="font-size: 14px; line-height: 30px">
         <div style="font-size: 14px"><%= document.created_at.iso8601 %></div>
       </div>
+      <div class="col-auto">
+        <% if @editing_document == document %>
+          <i class="fa fa-save" data-reflex="click->DocumentReflex#finish" data-id="<%= document.id %>"></i>
+        <% else %>
+          <i class="fa fa-pen" data-reflex="click->DocumentReflex#edit" data-id="<%= document.id %>"></i>
+        <% end %>
+      </div>
     </div>
-  <% end %>
+  <%# end %>
 </li>

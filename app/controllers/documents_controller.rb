@@ -3,5 +3,6 @@ class DocumentsController < ApplicationController
 
   def show
     @document = Document.find(params[:id])
+    @editing_document = session[:editing_document] ||= nil
   end
 end
