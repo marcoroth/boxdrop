@@ -2,8 +2,25 @@
 <% folders ||= [] %>
 <% documents ||= [] %>
 
-<ul class="list-group">
-  <%= render partial: 'folders/parent_folder', locals: { folder: current_folder } %>
-  <%= render partial: 'folders/folder_item', collection: folders, as: :folder %>
-  <%= render partial: 'documents/document_item', collection: documents, as: :document %>
-</ul>
+<%= render partial: 'folders/layout_switch', locals: { layout: @layout } %>
+
+<br/><br/>
+
+<% if @layout == 'list' %>
+  <ul class="list-group">
+    <%= render partial: 'folders/parent_folder', locals: { folder: current_folder } %>
+    <%= render partial: 'folders/folder_item', collection: folders, as: :folder %>
+    <%= render partial: 'documents/document_item', collection: documents, as: :document %>
+  </ul><br/>
+<% else %>
+  <div class="row">
+    <%= render partial: 'folders/folder_grid_item', collection: folders, as: :folder %>
+    <%= render partial: 'documents/document_grid_item', collection: documents, as: :document %>
+  </div>
+<% end %>
+
+<br/>
+
+<% if folders.empty? && documents.empty? %>
+  <%= render partial: 'folders/empty' %>
+<% end %>
