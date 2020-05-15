@@ -1,0 +1,10 @@
+<div class="text-right">
+  <div class="btn-group" role="group" aria-label="Basic example">
+    <button type="button" data-reflex="click->LayoutReflex#set_layout" data-layout="list" class="btn btn-<% if layout == 'list' %>primary<% else %>outline-primary<% end %>">
+      <i class="fa fa-list"></i>
+    </button>
+    <button type="button" data-reflex="click->LayoutReflex#set_layout" data-layout="grid" class="btn btn-<% if layout == 'grid' %>primary<% else %>outline-primary<% end %>">
+      <i class="fa fa-th-large"></i>
+    </button>
+  </div>
+</div>
