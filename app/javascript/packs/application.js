@@ -8,7 +8,6 @@ require("turbolinks").start()
 require("@rails/activestorage").start()
 require("channels")
 
-
 // Uncomment to copy all static images under ../images to the output folder and reference
 // them with the image_pack_tag helper in views (e.g <%= image_pack_tag 'rails.png' %>)
 // or the `imagePath` JavaScript helper below.
@@ -16,15 +15,15 @@ require("channels")
 // const images = require.context('../images', true)
 // const imagePath = (name) => images(name, true)
 
-import '@fortawesome/fontawesome-free/webfonts/fa-regular-400.eot'
-import '@fortawesome/fontawesome-free/webfonts/fa-regular-400.svg'
-import '@fortawesome/fontawesome-free/webfonts/fa-regular-400.ttf'
-import '@fortawesome/fontawesome-free/webfonts/fa-regular-400.woff'
-import '@fortawesome/fontawesome-free/webfonts/fa-regular-400.woff2'
-import '@fortawesome/fontawesome-free/webfonts/fa-solid-900.eot'
-import '@fortawesome/fontawesome-free/webfonts/fa-solid-900.svg'
-import '@fortawesome/fontawesome-free/webfonts/fa-solid-900.ttf'
-import '@fortawesome/fontawesome-free/webfonts/fa-solid-900.woff'
-import '@fortawesome/fontawesome-free/webfonts/fa-solid-900.woff2'
-import 'stylesheets/application.scss'
+import 'bootstrap'
+import $ from 'jquery'
 import 'controllers'
+import 'stylesheets/application.scss'
+
+document.addEventListener("turbolinks:visit", () => {
+  $('[data-toggle="dropdown"]').dropdown();
+});
+
+document.addEventListener("cable-ready:after-morph", () => {
+  $('[data-toggle="dropdown"]').dropdown();
+});

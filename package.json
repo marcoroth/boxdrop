@@ -9,6 +9,7 @@
     "@rails/webpacker": "4.2.2",
     "bootstrap": "^4.5.0",
     "cable_ready": "^4.1.2",
+    "jquery": "^3.5.1",
     "popper.js": "^1.16.1",
     "stimulus": "^1.1.1",
     "stimulus_reflex": "^3.2.1",

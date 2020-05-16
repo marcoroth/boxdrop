@@ -59,4 +59,7 @@ class FolderReflex < ApplicationReflex
     session[:editing_folder] = nil
   end
 
+  def create_folder
+    Folder.create(name: FFaker::Internet.domain_word.camelcase, parent_id: element.dataset['folder-id'])
+  end
 end

@@ -17,7 +17,7 @@ ActiveRecord::Schema.define(version: 2020_05_13_214219) do
 
   create_table "documents", force: :cascade do |t|
     t.string "name"
-    t.bigint "folder_id", null: false
+    t.bigint "folder_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["folder_id"], name: "index_documents_on_folder_id"

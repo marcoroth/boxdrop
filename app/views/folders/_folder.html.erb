@@ -2,7 +2,21 @@
 <% folders ||= [] %>
 <% documents ||= [] %>
 
-<%= render partial: 'folders/layout_switch', locals: { layout: @layout } %>
+<div class="row">
+  <div class="col-6">
+    <div class="dropdown">
+      <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Create</button>
+      <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+        <button class="dropdown-item" data-folder-id="<%= current_folder&.id %>" data-reflex="click->FolderReflex#create_folder"><i class="fa fa-folder-plus"></i> Create Folder</button>
+        <button class="dropdown-item" data-folder-id="<%= current_folder&.id %>" data-reflex="click->DocumentReflex#create_document"><i class="fa fa-file-medical"></i> Create Document</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-6">
+    <%= render partial: 'folders/layout_switch', locals: { layout: @layout } %>
+  </div>
+</div>
 
 <br/><br/>
 
@@ -18,8 +32,6 @@
     <%= render partial: 'documents/document_grid_item', collection: documents, as: :document %>
   </div>
 <% end %>
-
-<br/>
 
 <% if folders.empty? && documents.empty? %>
   <%= render partial: 'folders/empty' %>

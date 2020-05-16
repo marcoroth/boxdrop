@@ -1,6 +1,7 @@
 class HomeController < ApplicationController
   def index
     @folders = Folder.root
+    @documents = Document.root
 
     @selected_folder = session[:selected_folder] ||= nil
     @editing_document = session[:editing_document] ||= nil
