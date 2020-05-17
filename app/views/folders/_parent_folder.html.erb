@@ -17,11 +17,15 @@
         dragenter@window->folders#dragenter
         dragend@window->folders#dragend
         dragleave@window->folders#dragleave
-        "><div class="col">..</div></div>
+        ">
+        <div class="col text-center">
+          <i class="fa fa-arrow-up"></i> Level up
+        </div>
+      </div>
       <% end %>
     <% else %>
       <%= link_to root_path do %>
-        <div class="row"><div class="col">..</div></div>
+        <div class="row"><div class="col  text-center"><i class="fa fa-arrow-up"></i> Level up</div></div>
       <% end %>
     <% end %>
   <% else %>

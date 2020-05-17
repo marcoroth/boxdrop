@@ -2,37 +2,31 @@
 <% folders ||= [] %>
 <% documents ||= [] %>
 
-<div class="row">
+<div class="row mb-5">
   <div class="col-6">
-    <div class="dropdown">
-      <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Create</button>
-      <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-        <button class="dropdown-item" data-folder-id="<%= current_folder&.id %>" data-reflex="click->FolderReflex#create_folder"><i class="fa fa-folder-plus"></i> Create Folder</button>
-        <button class="dropdown-item" data-folder-id="<%= current_folder&.id %>" data-reflex="click->DocumentReflex#create_document"><i class="fa fa-file-medical"></i> Create Document</button>
-      </div>
-    </div>
+    <%= render partial: 'create_actions', locals: { current_folder: current_folder } %>
   </div>
-
   <div class="col-6">
-    <%= render partial: 'folders/layout_switch', locals: { layout: @layout } %>
+    <%= render partial: 'layout_switch', locals: { layout: @layout } %>
   </div>
 </div>
 
-<br/><br/>
-
-<% if @layout == 'list' %>
-  <ul class="list-group">
+<div id="folder">
+  <% if @layout == 'list' %>
+    <ul class="list list-group">
+      <%= render partial: 'folders/parent_folder', locals: { folder: current_folder } %>
+      <%= render partial: 'folders/item', collection: folders, as: :folder %>
+      <%= render partial: 'documents/item', collection: documents, as: :document %>
+    </ul>
+  <% else %>
     <%= render partial: 'folders/parent_folder', locals: { folder: current_folder } %>
-    <%= render partial: 'folders/folder_item', collection: folders, as: :folder %>
-    <%= render partial: 'documents/document_item', collection: documents, as: :document %>
-  </ul><br/>
-<% else %>
-  <div class="row">
-    <%= render partial: 'folders/folder_grid_item', collection: folders, as: :folder %>
-    <%= render partial: 'documents/document_grid_item', collection: documents, as: :document %>
-  </div>
-<% end %>
+    <div class="grid row">
+      <%= render partial: 'folders/grid_item', collection: folders, as: :folder %>
+      <%= render partial: 'documents/grid_item', collection: documents, as: :document %>
+    </div>
+  <% end %>
 
-<% if folders.empty? && documents.empty? %>
-  <%= render partial: 'folders/empty' %>
-<% end %>
+  <% if folders.empty? && documents.empty? %>
+    <%= render partial: 'folders/empty' %>
+  <% end %>
+</div>

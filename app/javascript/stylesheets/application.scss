@@ -5,6 +5,10 @@ $fa-font-path: '~@fortawesome/fontawesome-free/webfonts';
 @import '~@fortawesome/fontawesome-free/scss/brands';
 
 $primary: #44449b;
+$secondary: lightgrey;
 $success: #4fcb4a;
-$info: #1181b2;
+$info: #9ecdfa;
+
+$breadcrumb-divider: quote(">");
+
 @import 'bootstrap/scss/bootstrap';

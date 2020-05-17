@@ -1,2 +1,2 @@
-<h1>Folder#index</h1>
-<p>Find me in app/views/folder/index.html.erb</p>
+<%= render partial: 'breadcrumb', locals: { current_folder: nil } %>
+<%= render partial: 'folders/folder', locals: { folders: @folders, documents: @documents } %>

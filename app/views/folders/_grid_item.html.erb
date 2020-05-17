@@ -1,0 +1,10 @@
+<div id="<%= dom_id(folder) %>" class="grid-item folder-grid-item <%= grid_item_classes(@layout) %> mt-4 text-center">
+  <%= link_to folder do %>
+    <div class="p-4 card folder-item">
+      <i class="fa fa-folder fa-3x text-info"></i><br/>
+      <div class="name folder-name">
+        <%= folder.name %>
+      </div>
+    </div>
+  <% end %>
+</div>

@@ -13,3 +13,8 @@
  *= require_tree .
  *= require_self
  */
+
+.fa-dropbox {
+  color: blue;
+  font-size: 32px;
+}

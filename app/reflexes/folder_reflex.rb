@@ -22,6 +22,10 @@ class FolderReflex < ApplicationReflex
     end
   end
 
+  def delete
+    Folder.find(element.dataset[:id]).destroy
+  end
+
   def move(attrs)
     folder = Folder.find(attrs["folder"])
     document = Document.find(attrs["document"])
@@ -56,10 +60,9 @@ class FolderReflex < ApplicationReflex
   def change_name
     folder = Folder.find(element.dataset[:id])
     folder.update(name: element[:value])
-    session[:editing_folder] = nil
   end
 
-  def create_folder
+  def sample
     Folder.create(name: FFaker::Internet.domain_word.camelcase, parent_id: element.dataset['folder-id'])
   end
 end

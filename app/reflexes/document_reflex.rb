@@ -27,10 +27,16 @@ class DocumentReflex < ApplicationReflex
   def change_name
     document = Document.find(element.dataset[:id])
     document.update(name: element[:value])
-    session[:editing_document] = nil
   end
 
-  def create_document
-    Document.create(name: "#{FFaker::Internet.domain_word}.#{FFaker::Filesystem.extension}", folder_id: element.dataset['folder-id'])
+  def delete
+    Document.find(element.dataset[:id]).destroy
+  end
+
+  def sample
+    Document.create(
+      name: "#{FFaker::Internet.domain_word}.#{FFaker::Filesystem.extension}",
+      folder_id: element.dataset['folder-id']
+    )
   end
 end

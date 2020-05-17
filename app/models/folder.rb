@@ -6,4 +6,8 @@ class Folder < ApplicationRecord
   scope :root, lambda { where(parent_id: nil) }
 
   default_scope { order(name: :asc) }
+
+  def to_s
+    name
+  end
 end

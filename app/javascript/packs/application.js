@@ -20,10 +20,6 @@ import $ from 'jquery'
 import 'controllers'
 import 'stylesheets/application.scss'
 
-document.addEventListener("turbolinks:visit", () => {
-  $('[data-toggle="dropdown"]').dropdown();
-});
-
 document.addEventListener("cable-ready:after-morph", () => {
-  $('[data-toggle="dropdown"]').dropdown();
+  $('[data-toggle="dropdown"]').dropdown('hide')
 });

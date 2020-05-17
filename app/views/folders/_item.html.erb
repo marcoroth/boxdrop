@@ -1,4 +1,4 @@
-<li class="list-group-item folder-item" id="<%= dom_id(folder) %>" data-folder-id="<%= folder.id %>" <% if @selected_elements.include? folder %> style="background: #f7f9fa" <% end %>
+<li id="<%= dom_id(folder) %>" class="list-item folder-list-item list-group-item folder-item" data-reflex-root="#<%= dom_id(folder) %>" data-folder-id="<%= folder.id %>" <% if @selected_elements.include? folder %> style="background: #f7f9fa" <% end %>
    data-action="
     drop@window->folders#drop
     dragstart@window->folders#dragstart
@@ -19,32 +19,33 @@
         dragleave@window->folders#dragleave
       "
     >
-      <div class="col-auto">
+      <div class="col-auto select">
         <i class="far <% if @selected_elements.include? folder %>fa-check-square <% else %>fa-square<% end %>" data-id="<%= folder.id %>" data-reflex="click->FolderReflex#select_folder" style="line-height: 30px"></i>
       </div>
-      <div class="col-auto">
-        <i class="fa fa-folder fa-2x" style="color: #9ecdfa"></i>
+      <div class="col-auto icon">
+        <i class="fa fa-folder fa-2x text-info"></i>
       </div>
-      <div class="col" style="font-size: 14px; line-height: 30px">
-        <div style="font-size: 14px">
-
-          <% if @editing_folder == folder %>
+      <div class="col name folder-name">
+        <% if @editing_folder == folder %>
+          <form data-reflex="submit->FolderReflex#finish" data-id="<%= folder.id %>">
             <input
               type="text"
               class="form-control"
-              data-reflex="change->FolderReflex#change_name"
+              data-reflex="keyup->FolderReflex#change_name"
               value="<%= folder.name %>"
               data-id="<%= folder.id %>"
             >
-          <% else %>
-            <%= link_to folder.name, folder %>
-          <% end %>
-        </div>
+          </form>
+        <% else %>
+          <%= link_to folder.name, folder %>
+        <% end %>
       </div>
-      <div class="col d-none d-sm-block text-muted" style="font-size: 14px; line-height: 30px">
-        <div style="font-size: 14px"><%= folder.created_at.iso8601 %></div>
+      <div class="col d-none d-sm-block text-muted date">
+        <div><%= folder.created_at.iso8601 %></div>
       </div>
-      <div class="col-auto">
+      <div class="col-auto actions">
+        <i class="fa fa-trash" data-reflex="click->FolderReflex#delete" data-reflex-root="#folder" data-id="<%= folder.id %>"></i>
+
         <% if @editing_folder == folder %>
           <i class="fa fa-save" data-reflex="click->FolderReflex#finish" data-id="<%= folder.id %>"></i>
         <% else %>

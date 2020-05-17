@@ -20,7 +20,6 @@ ActiveRecord::Schema.define(version: 2020_05_13_214219) do
     t.bigint "folder_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["folder_id"], name: "index_documents_on_folder_id"
   end
 
   create_table "folders", force: :cascade do |t|
@@ -30,5 +29,4 @@ ActiveRecord::Schema.define(version: 2020_05_13_214219) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
-  add_foreign_key "documents", "folders"
 end
