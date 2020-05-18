@@ -49,14 +49,16 @@
       <div class="col d-none d-sm-block text-muted date">
         <div><%= folder.created_at.iso8601 %></div>
       </div>
-      <div class="col-auto actions" data-reflex-root="#<%= dom_id(folder) %>">
+      <div class="col-auto actions">
         <i class="fa fa-trash" data-reflex="click->FolderReflex#delete" data-id="<%= folder.id %>"></i>
 
+        <span data-reflex-root="#<%= dom_id(folder) %>">
         <% if @editing_folder == folder %>
           <i class="fa fa-save" data-reflex="click->FolderReflex#finish" data-id="<%= folder.id %>"></i>
         <% else %>
           <i class="fa fa-pen" data-reflex="click->FolderReflex#edit" data-id="<%= folder.id %>"></i>
         <% end %>
+        </span>
       </div>
     </div>
   <%# end %>

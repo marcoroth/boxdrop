@@ -31,13 +31,15 @@
         <div style="font-size: 14px"><%= document.created_at.iso8601 %></div>
       </div>
       <div class="col-auto actions">
-        <i class="fa fa-trash" data-reflex="click->DocumentReflex#delete" data-reflex-root="#<%= dom_id(document) %>" data-id="<%= document.id %>"></i>
+        <i class="fa fa-trash" data-reflex="click->DocumentReflex#delete" data-id="<%= document.id %>"></i>
 
-        <% if @editing_document == document %>
-          <i class="fa fa-save" data-reflex="click->DocumentReflex#finish" data-id="<%= document.id %>"></i>
-        <% else %>
-          <i class="fa fa-pen" data-reflex="click->DocumentReflex#edit" data-id="<%= document.id %>"></i>
-        <% end %>
+        <span data-reflex-root="#<%= dom_id(document) %>">
+          <% if @editing_document == document %>
+            <i class="fa fa-save" data-reflex="click->DocumentReflex#finish" data-id="<%= document.id %>"></i>
+          <% else %>
+            <i class="fa fa-pen" data-reflex="click->DocumentReflex#edit" data-id="<%= document.id %>"></i>
+          <% end %>
+        </span>
       </div>
     </div>
   <%# end %>
