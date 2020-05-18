@@ -1,4 +1,10 @@
-<li id="<%= dom_id(folder) %>" class="list-item folder-list-item list-group-item folder-item" data-reflex-root="#<%= dom_id(folder) %>" data-folder-id="<%= folder.id %>" <% if @selected_elements.include? folder %> style="background: #f7f9fa" <% end %>
+<li
+   id="<%= dom_id(folder) %>"
+   class="list-item folder-list-item list-group-item folder-item
+    <% if @selected_elements.include? folder %>selected<% end %>
+   "
+   data-folder-id="<%= folder.id %>"
+   data-reflex-root="#folder"
    data-action="
     drop@window->folders#drop
     dragstart@window->folders#dragstart
@@ -43,8 +49,8 @@
       <div class="col d-none d-sm-block text-muted date">
         <div><%= folder.created_at.iso8601 %></div>
       </div>
-      <div class="col-auto actions">
-        <i class="fa fa-trash" data-reflex="click->FolderReflex#delete" data-reflex-root="#folder" data-id="<%= folder.id %>"></i>
+      <div class="col-auto actions" data-reflex-root="#<%= dom_id(folder) %>">
+        <i class="fa fa-trash" data-reflex="click->FolderReflex#delete" data-id="<%= folder.id %>"></i>
 
         <% if @editing_folder == folder %>
           <i class="fa fa-save" data-reflex="click->FolderReflex#finish" data-id="<%= folder.id %>"></i>

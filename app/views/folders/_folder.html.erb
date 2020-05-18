@@ -29,4 +29,14 @@
   <% if folders.empty? && documents.empty? %>
     <%= render partial: 'folders/empty' %>
   <% end %>
+
+  <% if @selected_elements.any? %>
+    <button class="btn btn-primary text-white mt-5" data-reflex="click->FolderReflex#unselect_all">
+      <i class="fas fa-square"></i> Unselect all
+    </button>
+
+    <button class="btn btn-danger mt-5" data-reflex="click->FolderReflex#bulk_delete">
+      <i class="fa fa-trash"></i> Delete <%= @selected_elements.count %> Items
+    </button>
+  <% end %>
 </div>

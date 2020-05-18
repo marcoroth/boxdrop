@@ -62,6 +62,19 @@ class FolderReflex < ApplicationReflex
     folder.update(name: element[:value])
   end
 
+  def unselect_all
+    session[:selected_elements] = []
+  end
+
+  def bulk_delete
+    if session[:selected_elements]
+      session[:selected_elements].each do |item|
+        item.delete
+      end
+      session[:selected_elements] = []
+    end
+  end
+
   def sample
     Folder.create(name: FFaker::Internet.domain_word.camelcase, parent_id: element.dataset['folder-id'])
   end

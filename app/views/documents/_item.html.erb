@@ -1,4 +1,9 @@
-<li id="<%= dom_id(document) %>" class="list-item document-list-item list-group-item document-item" data-reflex-root="#<%= dom_id(document) %>" draggable="true" data-id="<%= document.id %>" <% if @selected_elements.include? document %> style="background: #f7f9fa" <% end %>>
+<li
+   id="<%= dom_id(document) %>"
+   class="list-item document-list-item list-group-item document-item"
+   data-reflex-root="#folder"
+   draggable="true" data-id="<%= document.id %>"
+   <% if @selected_elements.include? document %> style="background: #f7f9fa" <% end %>>
   <%#= link_to document_path(document) do %>
     <div class="row">
       <div class="col-auto select">
@@ -26,7 +31,7 @@
         <div style="font-size: 14px"><%= document.created_at.iso8601 %></div>
       </div>
       <div class="col-auto actions">
-        <i class="fa fa-trash" data-reflex="click->DocumentReflex#delete" data-reflex-root="#folder" data-id="<%= document.id %>"></i>
+        <i class="fa fa-trash" data-reflex="click->DocumentReflex#delete" data-reflex-root="#<%= dom_id(document) %>" data-id="<%= document.id %>"></i>
 
         <% if @editing_document == document %>
           <i class="fa fa-save" data-reflex="click->DocumentReflex#finish" data-id="<%= document.id %>"></i>

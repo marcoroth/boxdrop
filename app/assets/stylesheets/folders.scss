@@ -36,13 +36,12 @@
       }
 
       &:hover {
-        background: #f7f9fa;
+        background: #f8f9fa !important;
       }
 
-      .document-name:hover + .select {
-        display: block;
+      &.selected {
+        background: #f1f1f1 !important;
       }
-
     }
   }
 

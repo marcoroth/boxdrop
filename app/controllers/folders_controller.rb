@@ -19,5 +19,9 @@ class FoldersController < ApplicationController
     @editing_folder = session[:editing_folder] ||= nil
     @editing_document = session[:editing_document] ||= nil
     @selected_elements = session[:selected_elements] ||= []
+
+    if @stimulus_reflex.nil?
+      @selected_elements = session[:selected_elements] = []
+    end
   end
 end
