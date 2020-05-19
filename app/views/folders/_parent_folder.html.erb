@@ -1,7 +1,7 @@
 <li
   class="
     list-group-item parent-folder-item
-    <%= 'folder-item' if folder&.parent %>
+    <%= 'folder-item' if folder %>
   "
   id="<%= dom_id(folder.parent) if folder&.parent %>"
   data-reflex-root="#folder"
