@@ -38,8 +38,10 @@ class FolderReflex < ApplicationReflex
     parent = Folder.where(id: attrs["parent"]).first
     folder = Folder.find(attrs["folder"])
 
-    folder.parent = parent
-    folder.save
+    if parent != folder
+      folder.parent = parent
+      folder.save
+    end
   end
 
   def change_name
