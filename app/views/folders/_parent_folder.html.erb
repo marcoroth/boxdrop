@@ -1,27 +1,24 @@
-<li class="list-group-item folder-item parent-folder-item" id="<%= dom_id(folder.parent) if folder&.parent %>" data-folder-id="<%= folder&.parent&.id %>"
+<li
+  class="list-group-item folder-item parent-folder-item"
+  id="<%= dom_id(folder.parent) if folder&.parent %>"
+  data-reflex-root="#folder"
+  data-folder-id="<%= folder&.parent&.id %>"
   data-action="
-    drop@window->folders#drop
-    dragstart@window->folders#dragstart
-    dragover@window->folders#dragover
-    dragenter@window->folders#dragenter
-    dragend@window->folders#dragend
-    dragleave@window->folders#dragleave
+    drop->folders#drop
+    dragstart->folders#dragstart
+    dragover->folders#dragover
+    dragenter->folders#dragenter
+    dragend->folders#dragend
+    dragleave->folders#dragleave
   ">
   <% if folder %>
     <% if folder&.parent.present? %>
       <%= link_to folder_path(folder.parent) do %>
-        <div class="row" data-folder-id="<%= folder.parent&.id %>" data-action="
-        drop@window->folders#drop
-        dragstart@window->folders#dragstart
-        dragover@window->folders#dragover
-        dragenter@window->folders#dragenter
-        dragend@window->folders#dragend
-        dragleave@window->folders#dragleave
-        ">
-        <div class="col text-center">
-          <i class="fa fa-arrow-up"></i> Level up
+        <div class="row">
+          <div class="col text-center">
+            <i class="fa fa-arrow-up"></i> Level up
+          </div>
         </div>
-      </div>
       <% end %>
     <% else %>
       <%= link_to root_path do %>

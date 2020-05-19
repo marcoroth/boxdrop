@@ -2,61 +2,97 @@ import ApplicationController from './application_controller'
 import StimulusReflex from 'stimulus_reflex';
 
 export default class extends ApplicationController {
-  static draggable = null;
 
   connect() {
     StimulusReflex.register(this)
+
+    this.colors = {
+      default: 'white',
+      highlight: '#fef8e8',
+      hover: '#fbe7b1'
+    }
   }
 
   dragover(event) {
     event.preventDefault();
-
-    if (event.target.classList.contains('folder-item')) {
-      event.target.style.backgroundColor = '#fbe7b1';
-    }
+    this.hover(event.target);
   }
 
   dragenter(event) {
-    if (event.target.classList.contains('folder-item')) {
-      event.target.style.backgroundColor = '#fbe7b1';
-    }
+    this.hover(event.target);
   }
 
   dragleave(event) {
-    if (event.target.classList.contains('folder-item')) {
-      event.target.style.backgroundColor = '#fef8e8';
-    }
+    this.highlight(event.target);
   }
 
   dragstart(event) {
-    this.draggable = event.target;
     const folders = document.getElementsByClassName('folder-item');
 
     Array.prototype.forEach.call(folders, (folder) => {
-      folder.style.backgroundColor = '#fef8e8';
+      folder.style.backgroundColor = this.colors.highlight;
     })
+
+    this.draggable = event.target;
   }
 
   dragend(event) {
-    const folders = document.getElementsByClassName('folder-item');
-
-    Array.prototype.forEach.call(folders, (folder) => {
-      folder.style.backgroundColor = 'white';
-    })
+    this.clearHighlights();
   }
 
   drop(event) {
-    event.preventDefault();
+    const folderItem = this.getFolderItem(event.target);
 
-    const folders = document.getElementsByClassName('folder-item');
+    if (folderItem) {
+      const folderId = folderItem.dataset.folderId;
 
-    Array.prototype.forEach.call(folders, (folder) => {
-      folder.style.backgroundColor = 'white';
-    })
+      if (this.draggable.classList.contains('document-item')){
+        this.stimulate('DocumentReflex#move', folderItem, { folder: folderId, document: this.draggable.dataset.id })
+      } else if (this.draggable.classList.contains('folder-item')) {
+        this.stimulate('FolderReflex#move', folderItem, { parent: folderId, folder: this.draggable.dataset.folderId })
+      }
+    }
 
-    if (event.target.dataset.folderId) {
-      this.stimulate('FolderReflex#move', event.target, {folder: event.target.dataset.folderId, document: this.draggable.dataset.id})
+    this.clearHighlights();
+  }
+
+  highlight(element) {
+    const folderItem = this.getFolderItem(element);
+
+    if (folderItem) {
+      folderItem.style.backgroundColor = this.colors.highlight;
     }
   }
 
+  hover(element) {
+    const folderItem = this.getFolderItem(element);
+
+    if (folderItem) {
+      folderItem.style.backgroundColor = this.colors.hover;
+    }
+  }
+
+  clearHighlights() {
+    const folders = document.getElementsByClassName('folder-item');
+
+    Array.prototype.forEach.call(folders, (folder) => {
+      folder.style.backgroundColor = this.colors.default;
+    })
+  }
+
+  getFolderItem(element) {
+    let folderItem = null;
+    let parent = element.parentElement;
+
+    while (parent) {
+      if (parent.classList.contains('folder-item')) {
+        folderItem = parent;
+        break;
+      }
+
+      parent = parent.parentElement;
+    }
+
+    return folderItem
+  }
 }

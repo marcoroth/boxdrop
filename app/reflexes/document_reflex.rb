@@ -2,6 +2,16 @@
 
 class DocumentReflex < ApplicationReflex
 
+  def select
+    document = Document.find(element.dataset[:id])
+
+    if session[:selected_elements].include?(document)
+      session[:selected_elements] -= [document]
+    else
+      session[:selected_elements] << document
+    end
+  end
+
   def edit
     document = Document.find(element.dataset[:id])
     editing_document = session[:editing_document]
@@ -22,6 +32,14 @@ class DocumentReflex < ApplicationReflex
     if editing_document == document
       session[:editing_document] = nil
     end
+  end
+
+  def move(attrs)
+    folder = Folder.where(id: attrs["folder"]).first
+    document = Document.find(attrs["document"])
+
+    document.folder = folder
+    document.save
   end
 
   def change_name

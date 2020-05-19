@@ -2,7 +2,7 @@
 
 class FolderReflex < ApplicationReflex
 
-  def select_folder
+  def select
     folder = Folder.find(element.dataset[:id])
 
     if session[:selected_elements].include?(folder)
@@ -11,29 +11,6 @@ class FolderReflex < ApplicationReflex
       session[:selected_elements] << folder
     end
   end
-
-  def select_document
-    document = Document.find(element.dataset[:id])
-
-    if session[:selected_elements].include?(document)
-      session[:selected_elements] -= [document]
-    else
-      session[:selected_elements] << document
-    end
-  end
-
-  def delete
-    Folder.find(element.dataset[:id]).destroy
-  end
-
-  def move(attrs)
-    folder = Folder.find(attrs["folder"])
-    document = Document.find(attrs["document"])
-
-    document.folder = folder
-    document.save
-  end
-
 
   def edit
     folder = Folder.find(element.dataset[:id])
@@ -57,22 +34,21 @@ class FolderReflex < ApplicationReflex
     end
   end
 
+  def move(attrs)
+    parent = Folder.where(id: attrs["parent"]).first
+    folder = Folder.find(attrs["folder"])
+
+    folder.parent = parent
+    folder.save
+  end
+
   def change_name
     folder = Folder.find(element.dataset[:id])
     folder.update(name: element[:value])
   end
 
-  def unselect_all
-    session[:selected_elements] = []
-  end
-
-  def bulk_delete
-    if session[:selected_elements]
-      session[:selected_elements].each do |item|
-        item.delete
-      end
-      session[:selected_elements] = []
-    end
+  def delete
+    Folder.find(element.dataset[:id]).destroy
   end
 
   def sample

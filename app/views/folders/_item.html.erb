@@ -1,32 +1,28 @@
 <li
-   id="<%= dom_id(folder) %>"
-   class="list-item folder-list-item list-group-item folder-item
-    <% if @selected_elements.include? folder %>selected<% end %>
-   "
-   data-folder-id="<%= folder.id %>"
-   data-reflex-root="#folder"
-   data-action="
-    drop@window->folders#drop
-    dragstart@window->folders#dragstart
-    dragover@window->folders#dragover
-    dragenter@window->folders#dragenter
-    dragend@window->folders#dragend
-    dragleave@window->folders#dragleave
+  id="<%= dom_id(folder) %>"
+  class="list-item folder-list-item list-group-item folder-item
+    <%= @selected_elements.include?(folder) ? 'selected' : '' %>
+  "
+  data-folder-id="<%= folder.id %>"
+  data-reflex-root="#folder"
+  draggable="true"
+  data-action="
+    drop->folders#drop
+    dragstart->folders#dragstart
+    dragover->folders#dragover
+    dragstart->folders#dragstart
+    dragenter->folders#dragenter
+    dragend->folders#dragend
+    dragleave->folders#dragleave
   ">
-  <%#= link_to folder_path(folder) do %>
-    <div class="row"
-      data-folder-id="<%= folder.id %>"
-      data-action="
-        drop@window->folders#drop
-        dragstart@window->folders#dragstart
-        dragover@window->folders#dragover
-        dragenter@window->folders#dragenter
-        dragend@window->folders#dragend
-        dragleave@window->folders#dragleave
-      "
-    >
+    <div class="row">
       <div class="col-auto select">
-        <i class="far <% if @selected_elements.include? folder %>fa-check-square <% else %>fa-square<% end %>" data-id="<%= folder.id %>" data-reflex="click->FolderReflex#select_folder" style="line-height: 30px"></i>
+        <i
+          class="far fa-<%= @selected_elements.include?(folder) ? 'check-square' : 'square' %>"
+          data-id="<%= folder.id %>"
+          data-reflex="click->FolderReflex#select"
+          style="line-height: 30px"
+        ></i>
       </div>
       <div class="col-auto icon">
         <i class="fa fa-folder fa-2x text-info"></i>
@@ -50,16 +46,15 @@
         <div><%= folder.created_at.iso8601 %></div>
       </div>
       <div class="col-auto actions">
-        <i class="fa fa-trash" data-reflex="click->FolderReflex#delete" data-id="<%= folder.id %>"></i>
+        <i class="fa fa-trash btn btn-light" data-reflex="click->FolderReflex#delete" data-id="<%= folder.id %>"></i>
 
         <span data-reflex-root="#<%= dom_id(folder) %>">
         <% if @editing_folder == folder %>
-          <i class="fa fa-save" data-reflex="click->FolderReflex#finish" data-id="<%= folder.id %>"></i>
+          <i class="fa fa-save btn btn-primary" data-reflex="click->FolderReflex#finish" data-id="<%= folder.id %>"></i>
         <% else %>
-          <i class="fa fa-pen" data-reflex="click->FolderReflex#edit" data-id="<%= folder.id %>"></i>
+          <i class="fa fa-pen btn btn-light" data-reflex="click->FolderReflex#edit" data-id="<%= folder.id %>"></i>
         <% end %>
         </span>
       </div>
     </div>
-  <%# end %>
 </li>

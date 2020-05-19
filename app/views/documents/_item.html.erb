@@ -1,46 +1,52 @@
 <li
-   id="<%= dom_id(document) %>"
-   class="list-item document-list-item list-group-item document-item"
-   data-reflex-root="#folder"
-   draggable="true" data-id="<%= document.id %>"
-   <% if @selected_elements.include? document %> style="background: #f7f9fa" <% end %>>
-  <%#= link_to document_path(document) do %>
-    <div class="row">
-      <div class="col-auto select">
-        <i class="far <% if @selected_elements.include? document %>fa-check-square <%else %>fa-square<% end %>" data-id="<%= document.id %>" data-reflex="click->FolderReflex#select_document" style="line-height: 30px"></i>
-      </div>
-      <div class="col-auto icon">
-        <i class="fa fa-file fa-2x text-secondary"></i>
-      </div>
-      <div class="col name document-name" style="margin-left: 7px">
-        <% if @editing_document == document %>
-          <form data-reflex="submit->DocumentReflex#finish" data-id="<%= document.id %>">
-            <input
-              type="text"
-              class="form-control"
-              data-reflex="keyup->DocumentReflex#change_name"
-              value="<%= document.name %>"
-              data-id="<%= document.id %>"
-            >
-          </form>
-        <% else %>
-          <%= link_to document.name, document %>
-        <% end %>
-      </div>
-      <div class="col d-none d-sm-block text-muted date">
-        <div style="font-size: 14px"><%= document.created_at.iso8601 %></div>
-      </div>
-      <div class="col-auto actions">
-        <i class="fa fa-trash" data-reflex="click->DocumentReflex#delete" data-id="<%= document.id %>"></i>
-
-        <span data-reflex-root="#<%= dom_id(document) %>">
-          <% if @editing_document == document %>
-            <i class="fa fa-save" data-reflex="click->DocumentReflex#finish" data-id="<%= document.id %>"></i>
-          <% else %>
-            <i class="fa fa-pen" data-reflex="click->DocumentReflex#edit" data-id="<%= document.id %>"></i>
-          <% end %>
-        </span>
-      </div>
+  id="<%= dom_id(document) %>"
+  data-id="<%= document.id %>"
+  data-reflex-root="#folder"
+  draggable="true"
+  data-action="dragstart->folders#dragstart"
+  class="list-item document-list-item list-group-item document-item
+    <%= @selected_elements.include?(document) ? 'selected' : '' %>
+  ">
+  <div class="row">
+    <div class="col-auto select">
+      <i
+        class="far fa-<%= @selected_elements.include?(document) ? 'check-square' : 'square' %>"
+        data-id="<%= document.id %>"
+        data-reflex="click->DocumentReflex#select"
+        style="line-height: 30px"
+      ></i>
     </div>
-  <%# end %>
+    <div class="col-auto icon">
+      <i class="fa fa-file fa-2x text-secondary"></i>
+    </div>
+    <div class="col name document-name" style="margin-left: 7px">
+      <% if @editing_document == document %>
+        <form data-reflex="submit->DocumentReflex#finish" data-id="<%= document.id %>">
+          <input
+            type="text"
+            class="form-control"
+            data-reflex="keyup->DocumentReflex#change_name"
+            value="<%= document.name %>"
+            data-id="<%= document.id %>"
+          >
+        </form>
+      <% else %>
+        <%= link_to document.name, document %>
+      <% end %>
+    </div>
+    <div class="col d-none d-sm-block text-muted date">
+      <div style="font-size: 14px"><%= document.created_at.iso8601 %></div>
+    </div>
+    <div class="col-auto actions">
+      <i class="fa fa-trash btn btn-light" data-reflex="click->DocumentReflex#delete" data-id="<%= document.id %>"></i>
+
+      <span data-reflex-root="#<%= dom_id(document) %>">
+        <% if @editing_document == document %>
+          <i class="fa fa-save btn btn-primary" data-reflex="click->DocumentReflex#finish" data-id="<%= document.id %>"></i>
+        <% else %>
+          <i class="fa fa-pen btn btn-light" data-reflex="click->DocumentReflex#edit" data-id="<%= document.id %>"></i>
+        <% end %>
+      </span>
+    </div>
+  </div>
 </li>

@@ -1,6 +1,13 @@
-<div id="<%= dom_id(document) %>" class="grid-item document-grid-item <%= grid_item_classes(@layout) %> mt-4 text-center">
+<div class="grid-item document-item document-grid-item <%= grid_item_classes(@layout) %> mt-4 text-center">
   <%= link_to document do %>
-    <div class="p-4 card document-item" draggable="true">
+    <div
+      id="<%= dom_id(document) %>"
+      class="p-4 card document-item"
+      draggable="true"
+      data-id="<%= document.id %>"
+      data-action="dragstart->folders#dragstart"
+      data-reflex-root="#folder"
+    >
         <i class="fa fa-file fa-3x text-secondary"></i><br/>
         <div class="name document-name">
           <%= document %>

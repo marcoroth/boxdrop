@@ -11,7 +11,7 @@
   </div>
 </div>
 
-<div id="folder">
+<div id="folder" data-controller="folders" data-reflex-root="#folder">
   <% if @layout == 'list' %>
     <ul class="list list-group">
       <%= render partial: 'folders/parent_folder', locals: { folder: current_folder } %>
@@ -31,11 +31,11 @@
   <% end %>
 
   <% if @selected_elements.any? %>
-    <button class="btn btn-primary text-white mt-5" data-reflex="click->FolderReflex#unselect_all">
+    <button class="btn btn-primary text-white mt-5" data-reflex="click->ElementReflex#unselect_all">
       <i class="fas fa-square"></i> Unselect all
     </button>
 
-    <button class="btn btn-danger mt-5" data-reflex="click->FolderReflex#bulk_delete">
+    <button class="btn btn-danger mt-5" data-reflex="click->ElementReflex#bulk_delete">
       <i class="fa fa-trash"></i> Delete <%= @selected_elements.count %> Items
     </button>
   <% end %>

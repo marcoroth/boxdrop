@@ -21,10 +21,8 @@
         <%= link_to "Dropbox", root_path, class: 'navbar-brand col' %>
       </nav><br/>
 
-      <div data-controller="folders">
-        <div data-action="drop@window->folders#drop dragstart@window->folders#dragstart dragover@window->folders#dragover">
-          <%= yield %>
-        </div>
+      <div>
+        <%= yield %>
       </div>
     </div>
 
