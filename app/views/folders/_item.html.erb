@@ -8,12 +8,11 @@
   draggable="true"
   data-action="
     drop->folders#drop
-    dragstart->folders#dragstart
     dragover->folders#dragover
-    dragstart->folders#dragstart
     dragenter->folders#dragenter
-    dragend->folders#dragend
     dragleave->folders#dragleave
+    dragstart->folders#dragstart
+    dragend@window->folders#dragend
   ">
     <div class="row">
       <div class="col-auto select">
@@ -33,7 +32,7 @@
             <input
               type="text"
               class="form-control"
-              data-reflex="keyup->FolderReflex#change_name"
+              data-reflex="change->FolderReflex#change_name"
               value="<%= folder.name %>"
               data-id="<%= folder.id %>"
             >

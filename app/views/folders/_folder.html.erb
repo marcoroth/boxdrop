@@ -36,7 +36,7 @@
     </button>
 
     <button class="btn btn-danger mt-5" data-reflex="click->ElementReflex#bulk_delete">
-      <i class="fa fa-trash"></i> Delete <%= @selected_elements.count %> Items
+      <i class="fa fa-trash"></i> Delete <%= pluralize(@selected_elements.count, 'item') %>
     </button>
   <% end %>
 </div>

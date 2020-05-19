@@ -8,12 +8,11 @@
       data-reflex-root="#folder"
       data-action="
         drop->folders#drop
-        dragstart->folders#dragstart
         dragover->folders#dragover
-        dragstart->folders#dragstart
         dragenter->folders#dragenter
-        dragend->folders#dragend
         dragleave->folders#dragleave
+        dragstart->folders#dragstart
+        dragend@window->folders#dragend
       "
     >
       <i class="fa fa-folder fa-3x text-info"></i><br/>
