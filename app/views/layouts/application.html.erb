@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>DropboxClone</title>
+    <title>Boxdrop</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -16,26 +16,11 @@
     <div class="container"><br/>
       <nav class="navbar navbar-light bg-light">
         <%= link_to root_path, class: 'col-auto p-0' do %>
-          <i class="fab fa-dropbox"></i>
+          <%= image_tag "boxdrop.png", height: '50px' %>
         <% end %>
-        <%= link_to "Dropbox", root_path, class: 'navbar-brand col' %>
       </nav><br/>
 
-      <div>
-        <%= yield %>
-      </div>
+      <%= yield %>
     </div>
-
-    <br/><br/><br/><br/><br/><br/><br/>
-
-    <!-- <footer class="text-muted mt-auto py-3">
-      <div class="container">
-        <p class="float-right">
-          <a href="#">Back to top</a>
-        </p>
-        <p>This Dropbox clone demonstrates the functionality of StimulusReflex.</p>
-        <p>New to StimulusReflex? <a href="https://github.com/hopsoft/stimulus_reflex/" target="_blank">Visit the GitHub repo</a> or get started by <a href="https://docs.stimulusreflex.com" target="_blank">reading the docs</a>.</p>
-      </div>
-    </footer> -->
   </body>
 </html>

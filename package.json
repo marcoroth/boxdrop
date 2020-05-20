@@ -1,5 +1,5 @@
 {
-  "name": "dropbox_clone",
+  "name": "boxdrop",
   "private": true,
   "dependencies": {
     "@fortawesome/fontawesome-free": "^5.13.0",
