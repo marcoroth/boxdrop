@@ -1,7 +1,6 @@
 # frozen_string_literal: true
 
 class FolderReflex < ApplicationReflex
-
   def select
     folder = Folder.find(element.dataset[:id])
 
@@ -16,11 +15,11 @@ class FolderReflex < ApplicationReflex
     folder = Folder.find(element.dataset[:id])
     editing_folder = session[:editing_folder]
 
-    if editing_folder == folder
-      editing_folder = nil
-    else
-      editing_folder = folder
-    end
+    editing_folder = if editing_folder == folder
+                       nil
+                     else
+                       folder
+                     end
 
     session[:editing_folder] = editing_folder
   end
@@ -29,19 +28,17 @@ class FolderReflex < ApplicationReflex
     folder = Folder.find(element.dataset[:id])
     editing_folder = session[:editing_folder]
 
-    if editing_folder == folder
-      session[:editing_folder] = nil
-    end
+    session[:editing_folder] = nil if editing_folder == folder
   end
 
   def move(attrs)
-    parent = Folder.where(id: attrs["parent"]).first
-    folder = Folder.find(attrs["folder"])
+    parent = Folder.where(id: attrs['parent']).first
+    folder = Folder.find(attrs['folder'])
 
-    if parent != folder
-      folder.parent = parent
-      folder.save
-    end
+    return unless parent != folder
+
+    folder.parent = parent
+    folder.save
   end
 
   def change_name

@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class FoldersController < ApplicationController
   before_action :set_folders_and_documents
 
@@ -20,8 +22,6 @@ class FoldersController < ApplicationController
     @editing_document = session[:editing_document] ||= nil
     @selected_elements = session[:selected_elements] ||= []
 
-    if @stimulus_reflex.nil?
-      @selected_elements = session[:selected_elements] = []
-    end
+    @selected_elements = session[:selected_elements] = [] if @stimulus_reflex.nil?
   end
 end

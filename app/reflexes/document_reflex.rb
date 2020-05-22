@@ -1,7 +1,6 @@
 # frozen_string_literal: true
 
 class DocumentReflex < ApplicationReflex
-
   def select
     document = Document.find(element.dataset[:id])
 
@@ -16,11 +15,11 @@ class DocumentReflex < ApplicationReflex
     document = Document.find(element.dataset[:id])
     editing_document = session[:editing_document]
 
-    if editing_document == document
-      editing_document = nil
-    else
-      editing_document = document
-    end
+    editing_document = if editing_document == document
+                         nil
+                       else
+                         document
+                       end
 
     session[:editing_document] = editing_document
   end
@@ -29,14 +28,12 @@ class DocumentReflex < ApplicationReflex
     document = Document.find(element.dataset[:id])
     editing_document = session[:editing_document]
 
-    if editing_document == document
-      session[:editing_document] = nil
-    end
+    session[:editing_document] = nil if editing_document == document
   end
 
   def move(attrs)
-    folder = Folder.where(id: attrs["folder"]).first
-    document = Document.find(attrs["document"])
+    folder = Folder.where(id: attrs['folder']).first
+    document = Document.find(attrs['document'])
 
     document.folder = folder
     document.save

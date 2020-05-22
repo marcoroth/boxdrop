@@ -1,7 +1,9 @@
+# frozen_string_literal: true
+
 class Document < ApplicationRecord
   belongs_to :folder, optional: true
 
-  scope :root, lambda { where(folder_id: nil) }
+  scope :root, -> { where(folder_id: nil) }
 
   default_scope { order(name: :asc) }
 
