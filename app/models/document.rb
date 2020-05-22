@@ -3,9 +3,8 @@
 class Document < ApplicationRecord
   belongs_to :folder, optional: true
 
-  scope :root, -> { where(folder_id: nil) }
-
   default_scope { order(name: :asc) }
+  scope :root, -> { where(folder_id: nil) }
 
   def to_s
     name

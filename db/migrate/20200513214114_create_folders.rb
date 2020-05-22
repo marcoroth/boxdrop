@@ -4,7 +4,7 @@ class CreateFolders < ActiveRecord::Migration[6.0]
   def change
     create_table :folders do |t|
       t.string :name
-      t.integer :parent_id
+      t.bigint :parent_id, foreign_key: true
 
       t.timestamps
     end

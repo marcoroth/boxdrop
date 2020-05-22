@@ -12,6 +12,8 @@ class FoldersController < ApplicationController
     @folder = Folder.find(params[:id])
     @folders = @folder.folders
     @documents = @folder.documents
+  rescue StandardError
+    redirect_to root_path
   end
 
   private

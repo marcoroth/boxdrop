@@ -45,7 +45,12 @@
     }
   }
 
-  .parent-folder-item a {
-    text-decoration: none;
+  .parent-folder-item.folder-item {
+    &:hover {
+      background: #f7f9fa;
+    }
+    a {
+      text-decoration: none;
+    }
   }
 }
