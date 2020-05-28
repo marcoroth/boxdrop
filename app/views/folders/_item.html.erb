@@ -30,11 +30,10 @@
         <% if @editing_folder == folder %>
           <form data-reflex="submit->FolderReflex#finish" data-reflex-dataset="combined">
             <input
-              type="text"
-              class="form-control"
               data-reflex="change->FolderReflex#change_name"
-              value="<%= folder.name %>"
               data-reflex-dataset="combined"
+              class="form-control"
+              value="<%= folder.name %>"
             >
           </form>
         <% else %>
