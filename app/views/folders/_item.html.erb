@@ -18,7 +18,7 @@
       <div class="col-auto select">
         <i
           class="far fa-<%= @selected_elements.include?(folder) ? 'check-square' : 'square' %>"
-          data-id="<%= folder.id %>"
+          data-reflex-dataset="combined"
           data-reflex="click->FolderReflex#select"
           style="line-height: 30px"
         ></i>
@@ -28,13 +28,13 @@
       </div>
       <div class="col name folder-name">
         <% if @editing_folder == folder %>
-          <form data-reflex="submit->FolderReflex#finish" data-id="<%= folder.id %>">
+          <form data-reflex="submit->FolderReflex#finish" data-reflex-dataset="combined">
             <input
               type="text"
               class="form-control"
               data-reflex="change->FolderReflex#change_name"
               value="<%= folder.name %>"
-              data-id="<%= folder.id %>"
+              data-reflex-dataset="combined"
             >
           </form>
         <% else %>
@@ -45,14 +45,14 @@
         <div><%= folder.created_at.iso8601 %></div>
       </div>
       <div class="col-auto actions">
-        <i class="fa fa-trash btn btn-light" data-reflex="click->FolderReflex#delete" data-id="<%= folder.id %>"></i>
+        <i class="fa fa-trash btn btn-light" data-reflex="click->FolderReflex#delete" data-reflex-dataset="combined"></i>
 
         <span data-reflex-root="#<%= dom_id(folder) %>">
-        <% if @editing_folder == folder %>
-          <i class="fa fa-save btn btn-primary" data-reflex="click->FolderReflex#finish" data-id="<%= folder.id %>"></i>
-        <% else %>
-          <i class="fa fa-pen btn btn-light" data-reflex="click->FolderReflex#edit" data-id="<%= folder.id %>"></i>
-        <% end %>
+          <% if @editing_folder == folder %>
+            <i class="fa fa-save btn btn-primary" data-reflex="click->FolderReflex#finish" data-reflex-dataset="combined"></i>
+          <% else %>
+            <i class="fa fa-pen btn btn-light" data-reflex="click->FolderReflex#edit" data-reflex-dataset="combined"></i>
+          <% end %>
         </span>
       </div>
     </div>

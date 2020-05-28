@@ -2,7 +2,7 @@
 
 class DocumentReflex < ApplicationReflex
   def select
-    document = Document.find(element.dataset[:id])
+    document = Document.find(element.data_document_id)
 
     if session[:selected_elements].include?(document)
       session[:selected_elements] -= [document]
@@ -12,46 +12,40 @@ class DocumentReflex < ApplicationReflex
   end
 
   def edit
-    document = Document.find(element.dataset[:id])
+    document = Document.find(element.data_document_id)
     editing_document = session[:editing_document]
 
-    editing_document = if editing_document == document
-                         nil
-                       else
-                         document
-                       end
-
-    session[:editing_document] = editing_document
+    session[:editing_document] = editing_document == document ? nil : document
   end
 
   def finish
-    document = Document.find(element.dataset[:id])
+    document = Document.find(element.data_document_id)
     editing_document = session[:editing_document]
 
     session[:editing_document] = nil if editing_document == document
   end
 
   def move(attrs)
-    folder = Folder.where(id: attrs['folder']).first
-    document = Document.find(attrs['document'])
+    folder = Folder.where(id: attrs[:folder]).first
+    document = Document.find(attrs[:document])
 
     document.folder = folder
     document.save
   end
 
   def change_name
-    document = Document.find(element.dataset[:id])
-    document.update(name: element[:value])
+    document = Document.find(element.data_document_id)
+    document.update(name: element.value)
   end
 
   def delete
-    Document.find(element.dataset[:id]).destroy
+    Document.find(element.data_document_id).destroy
   end
 
   def sample
     Document.create(
       name: "#{FFaker::Internet.domain_word}.#{FFaker::Filesystem.extension}",
-      folder_id: element.dataset['folder-id']
+      folder_id: element.data_folder_id
     )
   end
 end
