@@ -1,24 +1,72 @@
-# README
+<p align="center">
+  <a href="https://github.com/marcoroth/boxdrop">
+    <img src="app/assets/images/boxdrop.png" alt="Logo" width="256">
+  </a>
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+  <h2 align="center">Boxdrop</h2>
 
-Things you may want to cover:
+  <p align="center">
+    Boxdrop is a <a href="https://dropbox.com" target="_blank">Dropbox</a>-Clone built using <a href="https://github.com/hopsoft/stimulus_reflex" target="_blank">StimulusReflex</a> to demonstrate <br>how you can use StimulusReflex to build an application.
+  </p>
+</p>
 
-* Ruby version
 
-* System dependencies
+## Built with
 
-* Configuration
+* Ruby 2.6.6
+* Rails 6.0.3.1
+* StimulusReflex 3.2.1
+* Turbolinks 5
+* Bundler 2.1.4
+* Node
+* Yarn
+* PostgreSQL
+* Redis
 
-* Database creation
 
-* Database initialization
+## Local Setup
 
-* How to run the test suite
+1. Install dependencies
 
-* Services (job queues, cache servers, search engines, etc.)
+   - [Ruby](https://www.ruby-lang.org/en/downloads/)
+   - [Yarn](https://yarnpkg.com/lang/en/docs/install/#mac-stable)
+   - [PostgreSQL](https://www.postgresql.org/download/)
+   - [Redis](https://redis.io/topics/quickstart)
 
-* Deployment instructions
+1. Clone the repo
 
-* ...
+   ```sh
+	git clone https://github.com/marcoroth/boxdrop.git
+   ```
+
+1. Switch into the project folder
+
+   ```sh
+   cd boxdrop
+   ```
+
+1. Run the setup command
+
+   ```sh
+   bin/setup
+   ```
+
+1. Start the rails server
+
+   ```sh
+   bin/rails server
+   ```
+
+1. See the app in action
+
+   To see the application in action, open a browser window and navigate to [http://localhost:3000](http://localhost:3000). That's it!
+
+## Credits
+
+Boxdrop logo made by [@darkrubyist](https://github.com/darkrubyist).
+
+
+## License
+
+Boxdrop is released under the [MIT License](LICENSE.txt).
+
