@@ -26,6 +26,9 @@ gem 'turbolinks', '~> 5'
 # Build reactive applications with the Rails tooling you already know and love.
 gem 'stimulus_reflex', '~> 3.2'
 
+# View components for Rails
+gem 'view_component'
+
 # Name generator for random folder and document names
 gem 'ffaker', '~> 2.14'
 
