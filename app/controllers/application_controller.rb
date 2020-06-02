@@ -6,6 +6,6 @@ class ApplicationController < ActionController::Base
   private
 
   def set_layout
-    @layout = session[:layout] ||= 'list'
+    session[:layout] ||= 'list'
   end
 end

@@ -1,4 +1,4 @@
-<div class="grid-item folder-item folder-grid-item <%= grid_item_classes(@layout) %> mt-4 text-center">
+<div class="grid-item folder-item folder-grid-item <%= grid_item_classes(session[:layout]) %> mt-4 text-center">
   <%= link_to folder do %>
     <div
       id="<%= dom_id(folder) %>"

@@ -7,12 +7,12 @@
     <%= render partial: 'create_actions', locals: { current_folder: current_folder } %>
   </div>
   <div class="col-6">
-    <%= render(LayoutSwitchComponent.new(layout: @layout)) %>
+    <%= render(LayoutSwitchComponent.new) %>
   </div>
 </div>
 
 <div id="folder" data-controller="folders" data-reflex-root="#folder">
-  <% if @layout == 'list' %>
+  <% if session[:layout] == 'list' %>
     <ul class="list list-group">
       <%= render partial: 'folders/parent_folder', locals: { folder: current_folder } %>
       <%= render partial: 'folders/item', collection: folders, as: :folder %>

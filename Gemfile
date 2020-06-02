@@ -29,6 +29,9 @@ gem 'stimulus_reflex', '~> 3.2'
 # View components for Rails
 gem 'view_component'
 
+# ViewComponentReflex allows you to write reflexes right in your view component code.
+gem 'view_component_reflex'
+
 # Name generator for random folder and document names
 gem 'ffaker', '~> 2.14'
 
