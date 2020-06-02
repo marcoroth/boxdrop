@@ -7,7 +7,7 @@
     <%= render partial: 'create_actions', locals: { current_folder: current_folder } %>
   </div>
   <div class="col-6">
-    <%= render partial: 'layout_switch', locals: { layout: @layout } %>
+    <%= render(LayoutSwitchComponent.new(layout: @layout)) %>
   </div>
 </div>
 
