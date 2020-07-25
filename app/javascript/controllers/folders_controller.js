@@ -47,7 +47,7 @@ export default class extends ApplicationController {
       const folderId = folderItem.dataset.folderId;
 
       if (this.draggable.classList.contains('document-item')){
-        this.stimulate('DocumentReflex#move', folderItem, { folder: folderId, document: this.draggable.dataset.id })
+        this.stimulate('DocumentReflex#move', folderItem, { folder: folderId, document: this.draggable.dataset.documentId })
       } else if (this.draggable.classList.contains('folder-item')) {
         this.stimulate('FolderReflex#move', folderItem, { parent: folderId, folder: this.draggable.dataset.folderId })
       }

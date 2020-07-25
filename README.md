@@ -14,10 +14,9 @@
 ## Built with
 
 * Ruby 2.6.6
-* Rails 6.0.3.1
-* StimulusReflex 3.2.1
+* Rails 6.0.3
+* StimulusReflex 3.3
 * Turbolinks 5
-* Bundler 2.1.4
 * Node
 * Yarn
 * PostgreSQL
@@ -73,4 +72,3 @@ Boxdrop logo made by [@darkrubyist](https://github.com/darkrubyist).
 ## License
 
 Boxdrop is released under the [MIT License](LICENSE.txt).
-

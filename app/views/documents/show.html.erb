@@ -1,16 +1,15 @@
 <%= render partial: 'breadcrumb', locals: { document: @document } %>
 
-<div class="container bg-light text-center" style="padding: 100px; cursor: pointer" data-reflex="click->DocumentReflex#edit" data-id="<%= @document.id %>">
+<div class="container bg-light text-center" style="padding: 100px; cursor: pointer" data-reflex="click->DocumentReflex#edit" data-document-id="<%= @document.id %>">
   <i class="fa fa-file fa-5x text-muted"></i><br/><br/>
 
   <% if @editing_document %>
-    <form class="col-md-6 offset-md-3" data-reflex="submit->DocumentReflex#finish" data-id="<%= @document.id %>">
+    <form class="col-md-6 offset-md-3" data-reflex="submit->DocumentReflex#finish" data-reflex-dataset="combined">
       <input
-        type="text"
         class="form-control text-center"
         data-reflex="keyup->DocumentReflex#change_name"
         value="<%= @document.name %>"
-        data-id="<%= @document.id %>"
+        data-reflex-dataset="combined"
       >
     </form>
   <% else %>
