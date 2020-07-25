@@ -1,0 +1,23 @@
+<div class="btn-toolbar" role="toolbar"">
+  <div class="dropdown btn-group mr-2" role="group">
+    <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Create</button>
+    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+      <a class="dropdown-item" data-folder-id="<%= current_folder&.id %>" data-reflex-root="#folder" data-reflex="click->FolderReflex#sample"><i class="fa fa-folder-plus"></i> Create Folder</a>
+      <a class="dropdown-item" data-folder-id="<%= current_folder&.id %>" data-reflex-root="#folder" data-reflex="click->DocumentReflex#sample"><i class="fa fa-file-medical"></i> Create Document</a>
+    </div>
+  </div>
+
+  <% if @selected_elements.any? %>
+    <div class="btn-group mr-2" role="group">
+      <button class="btn btn-primary text-white" data-reflex="click->ElementReflex#unselect_all">
+        <i class="fas fa-square"></i> Unselect all
+      </button>
+    </div>
+
+    <div class="btn-group" role="group">
+      <button class="btn btn-danger" data-reflex="click->ElementReflex#bulk_delete">
+        <i class="fa fa-trash"></i> Delete <%= pluralize(@selected_elements.count, 'item') %>
+      </button>
+    </div>
+  <% end %>
+</div>
