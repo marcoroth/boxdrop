@@ -1,7 +1,10 @@
+<% selected_elements ||= [] %>
+<% selected = selected_elements.include?(folder_item) %>
+
 <li
   id="<%= dom_id(folder) %>"
   class="list-item folder-list-item list-group-item folder-item
-    <%= @selected_elements.include?(folder) ? 'selected' : '' %>
+    <%= selected ? 'selected' : '' %>
   "
   data-folder-id="<%= folder.id %>"
   data-reflex-root="#folder"
@@ -17,7 +20,7 @@
     <div class="row">
       <div class="col-auto select">
         <i
-          class="far fa-<%= @selected_elements.include?(folder) ? 'check-square' : 'square' %>"
+          class="far fa-<%= selected ? 'check-square' : 'square' %>"
           data-reflex-dataset="combined"
           data-reflex="click->FolderReflex#select"
           style="line-height: 30px"

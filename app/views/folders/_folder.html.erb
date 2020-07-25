@@ -15,7 +15,9 @@
   <% if @layout == 'list' %>
     <ul class="list list-group">
       <%= render partial: 'folders/parent_folder', locals: { folder: current_folder } %>
-      <%= render partial: 'folders/item', collection: folders, as: :folder %>
+      <%= futurize partial: 'folders/item', collection: folders, as: :folder_item, locals: { selected_elements: @selected_elements }, extends: :div do %>
+        <%= render partial: 'folders/item_placeholder' %>
+      <% end %>
       <%= render partial: 'documents/item', collection: documents, as: :document %>
     </ul>
   <% else %>
@@ -30,7 +32,7 @@
     <%= render partial: 'folders/empty' %>
   <% end %>
 
-  <% if @selected_elements.any? %>
+  <% if @selected_elements.to_a.any? %>
     <button class="btn btn-primary text-white mt-5" data-reflex="click->ElementReflex#unselect_all">
       <i class="fas fa-square"></i> Unselect all
     </button>
