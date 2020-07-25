@@ -6696,10 +6696,10 @@ stdout-stream@^1.4.0:
     "@stimulus/core" "^1.1.1"
     "@stimulus/webpack-helpers" "^1.1.1"
 
-stimulus_reflex@3.2.2-pre0:
-  version "3.2.2-pre0"
-  resolved "https://registry.yarnpkg.com/stimulus_reflex/-/stimulus_reflex-3.2.2-pre0.tgz#d5286eeacf942e939eed4483cf6afb7b618ed9f1"
-  integrity sha512-BV2sZiQ8PNXEiqHJF4eJK8b9osdeEbwaMsZ0Vj1th3uPcFfevKyWbgP8xEIs8Y0HiFRl1Ka13I/WpZFtKVB7oA==
+stimulus_reflex@3.3.0-pre2:
+  version "3.3.0-pre2"
+  resolved "https://registry.yarnpkg.com/stimulus_reflex/-/stimulus_reflex-3.3.0-pre2.tgz#58a31a99ab043fd40c9de9d6035a4f9c4804da47"
+  integrity sha512-ly7U2McaDjQGugV9OGuLCjedMsLPb4DWeXop+Rs3y6g8vUEYYzFU2pDUgTA42NTl311hemooqhQFY6eCoXmCGA==
   dependencies:
     "@rails/actioncable" ">= 6.0"
     cable_ready ">= 4.1.2"
