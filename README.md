@@ -24,6 +24,10 @@
 * Redis
 
 
+## Demo
+
+Check out the [demo](https://www.boxdrop.io) running at [www.boxdrop.io](https://www.boxdrop.io).
+
 ## Local Setup
 
 1. Install dependencies
