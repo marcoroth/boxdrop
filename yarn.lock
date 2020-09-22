@@ -1677,7 +1677,14 @@ bytes@3.1.0:
   resolved "https://registry.yarnpkg.com/bytes/-/bytes-3.1.0.tgz#f6cf7933a360e0588fa9fde85651cdc7f805d1f6"
   integrity sha512-zauLjrfCG+xvoyaqLoV8bLVXXNGC4JqlxFCutSDWA6fJrTo2ZuvLYTqZ7aHBLZSMOopbzwv8f+wZcVzfVTI2Dg==
 
-"cable_ready@>= 4.1.2", cable_ready@^4.1.2:
+"cable_ready@>= 4.3.0":
+  version "4.3.0"
+  resolved "https://registry.yarnpkg.com/cable_ready/-/cable_ready-4.3.0.tgz#69c6c6963a60d7891f43c7530e343007a00a50b3"
+  integrity sha512-/hjwgdwMoe2hE5KKunsuWXDTr26GzwR7CovdFKHdSHD/yZTFFIv/eY27slMiXUEb57X12GHdliSM59rftTKpoQ==
+  dependencies:
+    morphdom "^2.6.1"
+
+cable_ready@^4.1.2:
   version "4.1.2"
   resolved "https://registry.yarnpkg.com/cable_ready/-/cable_ready-4.1.2.tgz#465eb1e5b851a5d1cec72726226c62c55261b616"
   integrity sha512-F6hJBSsEjN2voJiUZoM05cplB49AIaXk3oHVZptPG2bbw+HLbiR3jU3SSslnm4VIKSfPzfvPHlyU16kuiro6JA==
@@ -4547,7 +4554,7 @@ mixin-deep@^1.2.0:
   dependencies:
     minimist "^1.2.5"
 
-morphdom@^2.5.12:
+morphdom@^2.5.12, morphdom@^2.6.1:
   version "2.6.1"
   resolved "https://registry.yarnpkg.com/morphdom/-/morphdom-2.6.1.tgz#e868e24f989fa3183004b159aed643e628b4306e"
   integrity sha512-Y8YRbAEP3eKykroIBWrjcfMw7mmwJfjhqdpSvoqinu8Y702nAwikpXcNFDiIkyvfCLxLM9Wu95RZqo4a9jFBaA==
@@ -6761,13 +6768,13 @@ stdout-stream@^1.4.0:
     "@stimulus/core" "^1.1.1"
     "@stimulus/webpack-helpers" "^1.1.1"
 
-stimulus_reflex@3.3.0-pre2:
-  version "3.3.0-pre2"
-  resolved "https://registry.yarnpkg.com/stimulus_reflex/-/stimulus_reflex-3.3.0-pre2.tgz#58a31a99ab043fd40c9de9d6035a4f9c4804da47"
-  integrity sha512-ly7U2McaDjQGugV9OGuLCjedMsLPb4DWeXop+Rs3y6g8vUEYYzFU2pDUgTA42NTl311hemooqhQFY6eCoXmCGA==
+stimulus_reflex@3.3.0:
+  version "3.3.0"
+  resolved "https://registry.yarnpkg.com/stimulus_reflex/-/stimulus_reflex-3.3.0.tgz#3de755f21374d399d5337e0c60f5350cf81cc0de"
+  integrity sha512-HfeUIGeaA7N3tJEhJKt5SoiwTNw0Q8dt1DW9U0WNQom3F1ImaXigoP19spyrGS7yJmGw3Cwj/bikwwHsIdxaKg==
   dependencies:
     "@rails/actioncable" ">= 6.0"
-    cable_ready ">= 4.1.2"
+    cable_ready ">= 4.3.0"
     form-serialize ">= 0.7.2"
     stimulus ">= 1.1"
 
