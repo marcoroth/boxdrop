@@ -1,5 +1,6 @@
 import "@stimulus/polyfills"
 import "core-js/es/array/for-each"
+import "core-js/es/array/includes"
 
 // https://developer.mozilla.org/en-US/docs/Web/API/CustomEvent/CustomEvent#Polyfill
 (function () {
