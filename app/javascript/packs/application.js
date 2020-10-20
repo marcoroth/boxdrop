@@ -17,6 +17,7 @@ require("channels")
 
 import 'bootstrap'
 import $ from 'jquery'
+import "./polyfills"
 import 'controllers'
 import 'stylesheets/application.scss'
 

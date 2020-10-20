@@ -10,6 +10,7 @@
     "@stimulus/polyfills": "^1.1.1",
     "bootstrap": "^4.5.0",
     "cable_ready": "^4.1.2",
+    "core-js": "^3.6.5",
     "jquery": "^3.5.1",
     "popper.js": "^1.16.1",
     "stimulus": "^1.1.1",
