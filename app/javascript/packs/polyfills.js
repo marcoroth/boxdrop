@@ -1,8 +1,8 @@
 import "@stimulus/polyfills"
 import "core-js/es/array/for-each"
 
+// https://developer.mozilla.org/en-US/docs/Web/API/CustomEvent/CustomEvent#Polyfill
 (function () {
-
   if ( typeof window.CustomEvent === "function" ) return false;
 
   function CustomEvent ( event, params ) {
@@ -13,4 +13,11 @@ import "core-js/es/array/for-each"
    }
 
   window.CustomEvent = CustomEvent;
+})();
+
+// https://developer.mozilla.org/en-US/docs/Web/API/NodeList/forEach#Polyfill
+(function () {
+  if (window.NodeList && !NodeList.prototype.forEach) {
+     NodeList.prototype.forEach = Array.prototype.forEach;
+  }
 })();
