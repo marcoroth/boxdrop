@@ -942,6 +942,16 @@
   resolved "https://registry.yarnpkg.com/@stimulus/webpack-helpers/-/webpack-helpers-1.1.1.tgz#eff60cd4e58b921d1a2764dc5215f5141510f2c2"
   integrity sha512-XOkqSw53N9072FLHvpLM25PIwy+ndkSSbnTtjKuyzsv8K5yfkFB2rv68jU1pzqYa9FZLcvZWP4yazC0V38dx9A==
 
+"@stimulus_reflex/polyfills@^3.4.0-dev.0":
+  version "3.4.0-dev.1"
+  resolved "https://registry.yarnpkg.com/@stimulus_reflex/polyfills/-/polyfills-3.4.0-dev.1.tgz#cc1cd3af560e0900f0e6cbde1b555552ac814f4b"
+  integrity sha512-xViOEy39G2UNJWicBm8ITU5E99HW+MHU1QTZJPVp3bgD4v9sqUpdunCQLcozEfVA+QiFnx4CU/iL8w+xkSXfkg==
+  dependencies:
+    "@stimulus/polyfills" "^1.1.1"
+    "@webcomponents/template" "^1.4.4"
+    core-js "^3.4.0"
+    formdata-polyfill "^3.0.20"
+
 "@types/glob@^7.1.1":
   version "7.1.3"
   resolved "https://registry.yarnpkg.com/@types/glob/-/glob-7.1.3.tgz#e6ba80f36b7daad2c685acd9266382e68985c183"
@@ -1119,6 +1129,11 @@
     "@webassemblyjs/ast" "1.9.0"
     "@webassemblyjs/wast-parser" "1.9.0"
     "@xtuc/long" "4.2.2"
+
+"@webcomponents/template@^1.4.4":
+  version "1.4.4"
+  resolved "https://registry.yarnpkg.com/@webcomponents/template/-/template-1.4.4.tgz#2ca5a68b65b6e9cd9b17b25a951514f254c00742"
+  integrity sha512-QqCmmywIKJTilkl6UIPLxEBBuqhDaOBpvQyKOnUEwl9lJuVHBrVlhMIhhnp9VSZJ6xEUnp+PiX8DST1k0q/v4Q==
 
 "@xtuc/ieee754@^1.2.0":
   version "1.2.0"
@@ -3139,6 +3154,11 @@ form-data@~2.3.2:
   version "0.7.2"
   resolved "https://registry.yarnpkg.com/form-serialize/-/form-serialize-0.7.2.tgz#b0a2ff0c22026fb6d3d15c9d33f6de6a432e4732"
   integrity sha1-sKL/DCICb7bT0VydM/beakMuRzI=
+
+formdata-polyfill@^3.0.20:
+  version "3.0.20"
+  resolved "https://registry.yarnpkg.com/formdata-polyfill/-/formdata-polyfill-3.0.20.tgz#d6319db8efc5cf4bb2da27856c2b902be63be1c6"
+  integrity sha512-TAaxIEwTBdoH1TWndtUH1T0/GisUHwmOKcV5hjkR/iTatHBJSOHb563FP86Lra5nXo3iNdhK7HPwMl5Ihg71pg==
 
 forwarded@~0.1.2:
   version "0.1.2"

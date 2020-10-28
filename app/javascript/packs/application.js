@@ -17,7 +17,7 @@ require("channels")
 
 import 'bootstrap'
 import $ from 'jquery'
-import "./polyfills"
+import "@stimulus_reflex/polyfills"
 import 'controllers'
 import 'stylesheets/application.scss'
 
