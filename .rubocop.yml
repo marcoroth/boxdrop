@@ -1,3 +1,6 @@
+AllCops:
+  NewCops: enable
+
 Metrics/AbcSize:
   Max: 200
 
@@ -54,3 +57,6 @@ Style/SlicingWithRange:
 
 Style/SymbolArray:
   Enabled: false
+
+require:
+  - rubocop-rails

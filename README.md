@@ -13,10 +13,11 @@
 
 ## Built with
 
-* Ruby 2.6.6
-* Rails 6.0.3
-* StimulusReflex 3.3
+* Ruby 2.7.2
+* Rails 6.1.0
+* StimulusReflex 3.4
 * Turbolinks 5
+* Webpacker 5
 * Node
 * Yarn
 * PostgreSQL
