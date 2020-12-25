@@ -15,9 +15,10 @@ module FolderHelper
   end
 
   def grid_item_classes(layout)
-    if layout == 'grid-small'
+    case layout
+    when 'grid-small'
       'col-6 col-sm-4 col-md-3 col-lg-2'
-    elsif layout == 'grid'
+    when 'grid'
       'col-12 col-sm-6 col-md-4'
     else
       'col'

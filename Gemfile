@@ -3,10 +3,10 @@
 source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
-ruby '2.6.6'
+ruby '2.7.2'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '~> 6.0.3'
+gem 'rails', '~> 6.1.0'
 
 # Use postgresql as the database for Active Record
 gem 'pg', '>= 0.18', '< 2.0'
@@ -18,13 +18,13 @@ gem 'puma', '~> 4.3'
 gem 'sass-rails', '>= 6'
 
 # Transpile app-like JavaScript. Read more: https://github.com/rails/webpacker
-gem 'webpacker', '~> 4.0'
+gem 'webpacker', '~> 5.0'
 
 # Turbolinks makes navigating your web application faster. Read more: https://github.com/turbolinks/turbolinks
 gem 'turbolinks', '~> 5'
 
 # Build reactive applications with the Rails tooling you already know and love.
-gem 'stimulus_reflex', '3.3.0'
+gem 'stimulus_reflex', '3.4.0'
 
 # Name generator for random folder and document names
 gem 'ffaker', '~> 2.14'
@@ -50,7 +50,8 @@ group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
 
   # Static code analyzer and formatter
-  gem 'rubocop', '~> 0.84.0'
+  gem 'rubocop', '~> 1.6.0'
+  gem 'rubocop-rails', require: false
 end
 
 group :development do
