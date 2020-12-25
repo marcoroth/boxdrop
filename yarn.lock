@@ -7009,10 +7009,10 @@ stimulus@^2.0.0:
     "@stimulus/core" "^2.0.0"
     "@stimulus/webpack-helpers" "^2.0.0"
 
-stimulus_reflex@3.4.0-pre9:
-  version "3.4.0-pre9"
-  resolved "https://registry.yarnpkg.com/stimulus_reflex/-/stimulus_reflex-3.4.0-pre9.tgz#acad837ea8598c23f1dac41b438938d575f38da2"
-  integrity sha512-qWBkqbVHoTfmASMMMnkTCvZ5lAcRmaEoeUKsBVIjVAdhxvNqS5qoXQYouJHHwcE6G0x5tZ5DvydcBisFom/g8w==
+stimulus_reflex@3.4.0:
+  version "3.4.0"
+  resolved "https://registry.yarnpkg.com/stimulus_reflex/-/stimulus_reflex-3.4.0.tgz#3f8d4c77cf9e9fb7cd5bdce25fe52dddad22874f"
+  integrity sha512-hZrEzlmt8LWBZlmHadwPQh/JLqqLmwpkqxRN2DaDkEIXLhIUVL1kXvjsR4w/m4WIFDnFKiL0HEiCKHk8gfho6w==
   dependencies:
     "@rails/actioncable" ">= 6.0"
     cable_ready ">= 4.4"
