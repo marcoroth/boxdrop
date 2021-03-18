@@ -14,7 +14,7 @@
 ## Built with
 
 * Ruby 2.7.2
-* Rails 6.1.0
+* Rails 6.1
 * StimulusReflex 3.4
 * Turbolinks 5
 * Webpacker 5
