@@ -24,7 +24,7 @@ gem 'webpacker', '~> 5.0'
 gem 'turbolinks', '~> 5'
 
 # Build reactive applications with the Rails tooling you already know and love.
-gem 'stimulus_reflex', '3.4.0'
+gem 'stimulus_reflex', '3.4.1'
 
 # Name generator for random folder and document names
 gem 'ffaker', '~> 2.14'
