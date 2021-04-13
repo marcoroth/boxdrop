@@ -26,18 +26,16 @@ class FolderReflex < ApplicationReflex
   end
 
   def move(attrs)
-    parent = Folder.where(id: attrs[:parent]).first
+    parent = Folder.find_by(id: attrs[:parent])
     folder = Folder.find(attrs[:folder])
 
     return if parent == folder
 
-    folder.parent = parent
-    folder.save
+    folder.update(parent: parent)
   end
 
   def change_name
-    folder = Folder.find(element.data_folder_id)
-    folder.update(name: element.value)
+    Folder.find(element.data_folder_id).update(name: element.value)
   end
 
   def delete

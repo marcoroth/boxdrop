@@ -26,16 +26,13 @@ class DocumentReflex < ApplicationReflex
   end
 
   def move(attrs)
-    folder = Folder.where(id: attrs[:folder]).first
-    document = Document.find(attrs[:document])
+    folder = Folder.find_by(id: attrs[:folder])
 
-    document.folder = folder
-    document.save
+    Document.find(attrs[:document]).update(folder: folder)
   end
 
   def change_name
-    document = Document.find(element.data_document_id)
-    document.update(name: element.value)
+    Document.find(element.data_document_id).update(name: element.value)
   end
 
   def delete
