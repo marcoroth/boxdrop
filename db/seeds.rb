@@ -42,6 +42,7 @@ gorails.documents.create(name: 'stimulus-reflex-basics.mp4')
 
 media = Folder.create(name: 'Media')
 media.folders.create(name: 'Movies')
+
 series = media.folders.create(name: 'TV-Series')
 series.folders.create(name: 'Breaking Bad')
 series.folders.create(name: 'Better Call Saul')
