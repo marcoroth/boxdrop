@@ -1,0 +1,13 @@
+name: Rubocop
+on: [pull_request, push]
+jobs:
+  rubocop:
+    name: Rubocop Check Action
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@master
+    - uses: ruby/setup-ruby@v1
+      with:
+        bundler-cache: true
+    - name: Rubocop
+      run: bundle exec rubocop
