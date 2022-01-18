@@ -18,7 +18,7 @@
       <div class="col-auto select">
         <i
           class="far fa-<%= @selected_elements.include?(folder) ? 'check-square' : 'square' %>"
-          data-reflex-dataset="combined"
+          data-reflex-dataset="ancestors"
           data-reflex="click->FolderReflex#select"
           style="line-height: 30px"
         ></i>
@@ -28,10 +28,10 @@
       </div>
       <div class="col name folder-name">
         <% if @editing_folder == folder %>
-          <form data-reflex="submit->FolderReflex#finish" data-reflex-dataset="combined">
+          <form data-reflex="submit->FolderReflex#finish" data-reflex-dataset="ancestors">
             <input
               data-reflex="change->FolderReflex#change_name"
-              data-reflex-dataset="combined"
+              data-reflex-dataset="ancestors"
               class="form-control"
               value="<%= folder.name %>"
             >
@@ -44,13 +44,13 @@
         <div><%= folder.created_at.iso8601 %></div>
       </div>
       <div class="col-auto actions">
-        <i class="fa fa-trash btn btn-light" data-reflex="click->FolderReflex#delete" data-reflex-dataset="combined"></i>
+        <i class="fa fa-trash btn btn-light" data-reflex="click->FolderReflex#delete" data-reflex-dataset="ancestors"></i>
 
         <span data-reflex-root="#<%= dom_id(folder) %>">
           <% if @editing_folder == folder %>
-            <i class="fa fa-save btn btn-primary" data-reflex="click->FolderReflex#finish" data-reflex-dataset="combined"></i>
+            <i class="fa fa-save btn btn-primary" data-reflex="click->FolderReflex#finish" data-reflex-dataset="ancestors"></i>
           <% else %>
-            <i class="fa fa-pen btn btn-light" data-reflex="click->FolderReflex#edit" data-reflex-dataset="combined"></i>
+            <i class="fa fa-pen btn btn-light" data-reflex="click->FolderReflex#edit" data-reflex-dataset="ancestors"></i>
           <% end %>
         </span>
       </div>

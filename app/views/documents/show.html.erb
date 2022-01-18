@@ -4,12 +4,12 @@
   <i class="fa fa-file fa-5x text-muted"></i><br/><br/>
 
   <% if @editing_document %>
-    <form class="col-md-6 offset-md-3" data-reflex="submit->DocumentReflex#finish" data-reflex-dataset="combined">
+    <form class="col-md-6 offset-md-3" data-reflex="submit->DocumentReflex#finish" data-reflex-dataset="ancestors">
       <input
         class="form-control text-center"
         data-reflex="keyup->DocumentReflex#change_name"
         value="<%= @document.name %>"
-        data-reflex-dataset="combined"
+        data-reflex-dataset="ancestors"
       >
       <button class="btn btn-primary form-control mt-3">Done</button>
     </form>
