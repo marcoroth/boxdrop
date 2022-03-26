@@ -19,6 +19,11 @@ import 'bootstrap'
 import $ from 'jquery'
 import 'controllers'
 import 'stylesheets/application.scss'
+import CableReady from 'cable_ready'
+
+CableReady.operations.clearTurbolinksCache = () => {
+  Turbolinks.clearCache()
+}
 
 document.addEventListener("turbolinks:render", () => {
   $('[data-toggle="dropdown"]').dropdown('hide')
