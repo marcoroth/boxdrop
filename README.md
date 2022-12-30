@@ -13,7 +13,7 @@
 
 ## Built with
 
-* Ruby 3.0.3
+* Ruby 3.0.4
 * Rails 6.1
 * StimulusReflex 3.4
 * Turbolinks 5
