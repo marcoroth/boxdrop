@@ -35,8 +35,7 @@ gem 'ffaker', '~> 2.14'
 # gem 'jbuilder', '~> 2.7'
 
 # Use Redis adapter to run Action Cable in production
-gem 'hiredis'
-gem 'redis', '>= 4.0', require: ['redis', 'redis/connection/hiredis']
+gem 'redis', '~> 4.0', require: ['redis']
 
 # Use Active Model has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
