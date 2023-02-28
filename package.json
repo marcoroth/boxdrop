@@ -2,6 +2,8 @@
   "name": "boxdrop",
   "private": true,
   "dependencies": {
+    "@hotwired/stimulus": "^3.2.1",
+    "@hotwired/stimulus-webpack-helpers": "^1.0.1",
     "@rails/actioncable": "^6.0.0",
     "@rails/activestorage": "^6.0.0",
     "@rails/ujs": "^6.0.0",
@@ -11,7 +13,6 @@
     "popper.js": "^1.16.1",
     "postcss": "^8.2.15",
     "sass": "^1.48.0",
-    "stimulus": "^2.0.0",
     "stimulus_reflex": "3.5.0-pre10",
     "turbolinks": "^5.2.0"
   },

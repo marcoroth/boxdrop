@@ -1,17 +1,14 @@
 // Load all the controllers within this directory and all subdirectories.
 // Controller files must be named *_controller.js.
 
-import { Application } from 'stimulus'
-import { definitionsFromContext } from 'stimulus/webpack-helpers'
+import { application } from './application'
+import { definitionsFromContext } from '@hotwired/stimulus-webpack-helpers'
+import consumer from '../channels/consumer'
 
 import StimulusReflex from 'stimulus_reflex'
 import CableReady from 'cable_ready'
 
-import consumer from '../channels/consumer'
 import controller from './application_controller'
-
-const application = Application.start()
-application.consumer = consumer
 
 const context = require.context("controllers", true, /_controller\.js$/)
 application.load(definitionsFromContext(context))
