@@ -56,10 +56,10 @@ Check out the [demo](https://www.boxdrop.io) running at [www.boxdrop.io](https:/
    bin/setup
    ```
 
-1. Start the rails server
+1. Start the rails server and needed processes
 
    ```sh
-   bin/rails server
+   bin/dev
    ```
 
 1. See the app in action
