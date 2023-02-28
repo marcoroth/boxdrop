@@ -68,8 +68,11 @@ GEM
       msgpack (~> 1.2)
     builder (3.2.4)
     byebug (11.1.3)
-    cable_ready (5.0.0.pre8)
-      rails (>= 5.2)
+    cable_ready (5.0.0.pre10)
+      actionpack (>= 5.2)
+      actionview (>= 5.2)
+      activesupport (>= 5.2)
+      railties (>= 5.2)
       thread-local (>= 1.1.0)
     capybara (3.32.1)
       addressable
@@ -197,12 +200,16 @@ GEM
       actionpack (>= 5.2)
       activesupport (>= 5.2)
       sprockets (>= 3.0.0)
-    stimulus_reflex (3.5.0.pre8)
-      cable_ready (= 5.0.0.pre8)
-      nokogiri
-      rack
-      rails (>= 5.2)
-      redis
+    stimulus_reflex (3.5.0.pre10)
+      actioncable (>= 5.2, < 8)
+      actionpack (>= 5.2, < 8)
+      actionview (>= 5.2, < 8)
+      activesupport (>= 5.2, < 8)
+      cable_ready (>= 5.0.0.pre10)
+      nokogiri (~> 1.0)
+      rack (~> 2.0)
+      railties (>= 5.2, < 8)
+      redis (>= 4.0, < 6.0)
     thor (1.2.1)
     thread-local (1.1.0)
     tilt (2.0.10)
@@ -253,7 +260,7 @@ DEPENDENCIES
   selenium-webdriver
   spring
   spring-watcher-listen (~> 2.0.0)
-  stimulus_reflex (= 3.5.0.pre8)
+  stimulus_reflex (= 3.5.0.pre10)
   turbolinks (~> 5)
   tzinfo-data
   web-console (>= 3.3.0)

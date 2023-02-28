@@ -15,7 +15,7 @@
 
 * Ruby 3.0.4
 * Rails 6.1
-* StimulusReflex 3.4
+* StimulusReflex 3.5
 * Turbolinks 5
 * Webpacker 5
 * Node
