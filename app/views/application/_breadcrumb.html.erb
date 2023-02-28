@@ -2,8 +2,8 @@
 <% folder ||= document&.folder %>
 <% parents = get_items_of_folder(folder) %>
 
-<nav aria-label="breadcrumb">
-  <ol class="breadcrumb bg-light">
+<nav aria-label="breadcrumb" class="bg-light rounded">
+  <ol class="breadcrumb p-3">
     <li class="breadcrumb-item">
       <%= link_to "Home", root_path %>
     </li>

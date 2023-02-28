@@ -19,7 +19,10 @@
       <%= render partial: 'documents/item', collection: documents, as: :document %>
     </ul>
   <% else %>
-    <%= render partial: 'folders/parent_folder', locals: { folder: current_folder } %>
+    <ul class="list list-group">
+      <%= render partial: 'folders/parent_folder', locals: { folder: current_folder } %>
+    </ul>
+
     <div class="grid row">
       <%= render partial: 'folders/grid_item', collection: folders, as: :folder %>
       <%= render partial: 'documents/grid_item', collection: documents, as: :document %>

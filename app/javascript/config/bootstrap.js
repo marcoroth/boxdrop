@@ -1,10 +1,14 @@
-import $ from 'jquery'
 import 'bootstrap'
+import { Dropdown } from 'bootstrap'
 
-document.addEventListener('cable-ready:after-morph', () => {
-  $('[data-toggle="dropdown"]').dropdown('hide')
+document.addEventListener('turbo:load', () => {
+  document.querySelectorAll('[data-bs-toggle="dropdown"]').forEach(element => {
+    new Dropdown(element)
+  })
 })
 
-document.addEventListener('turbo:render', () => {
-  $('[data-toggle="dropdown"]').dropdown('hide')
+document.addEventListener('cable-ready:after-morph', () => {
+  document.querySelectorAll('[data-bs-toggle="dropdown"]').forEach(element => {
+    new Dropdown(element)
+  })
 })
