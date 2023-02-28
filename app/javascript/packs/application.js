@@ -4,7 +4,7 @@
 // that code so it'll be compiled.
 
 require("@rails/ujs").start()
-require("turbolinks").start()
+require("@hotwired/turbo-rails")
 require("@rails/activestorage").start()
 require("channels")
 
@@ -21,11 +21,11 @@ import 'controllers'
 import 'stylesheets/application.scss'
 import CableReady from 'cable_ready'
 
-CableReady.operations.clearTurbolinksCache = () => {
-  Turbolinks.clearCache()
+CableReady.operations.clearTurboCache = () => {
+  Turbo.cache.clear()
 }
 
-document.addEventListener("turbolinks:render", () => {
+document.addEventListener("turbo:render", () => {
   $('[data-toggle="dropdown"]').dropdown('hide')
 });
 

@@ -20,10 +20,9 @@ gem 'sass-rails', '>= 6'
 # Transpile app-like JavaScript. Read more: https://github.com/rails/webpacker
 gem 'webpacker', '~> 5.4.0'
 
-# Turbolinks makes navigating your web application faster. Read more: https://github.com/turbolinks/turbolinks
-gem 'turbolinks', '~> 5'
+# The speed of a single-page web application without having to write any JavaScript
+gem 'turbo-rails'
 
-# gem 'turbo-rails'
 # gem 'stimulus-rails'
 
 # Build reactive applications with the Rails tooling you already know and love.

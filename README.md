@@ -17,7 +17,7 @@
 * Rails 6.1
 * Stimulus 3.2
 * StimulusReflex 3.5
-* Turbolinks 5
+* Turbo 7.2
 * Webpacker 5
 * Node
 * Yarn
