@@ -1,0 +1,5 @@
+import './active_storage'
+import './bootstrap'
+import './cable_ready'
+import './stimulus_reflex'
+import './turbo'
