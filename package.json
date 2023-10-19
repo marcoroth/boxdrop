@@ -10,7 +10,7 @@
     "@rails/activestorage": "^6.0.0",
     "@rails/webpacker": "^5.4.3",
     "bootstrap": "^5.2.3",
-    "postcss": "^8.2.15",
+    "postcss": "^8.4.31",
     "sass": "^1.48.0",
     "stimulus_reflex": "3.5.0-pre10"
   },
