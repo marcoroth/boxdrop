@@ -7,7 +7,7 @@ module LayoutHelper
     tag.button(
       tag.i(class: "fa fa-#{icon}"),
       type: 'button',
-      data: { reflex: 'click->LayoutReflex#set_layout', layout: layout },
+      data: { reflex: 'click->LayoutReflex#set_layout', layout: },
       class: class_names('btn', 'btn-primary': active, 'btn-outline-primary': !active)
     )
   end

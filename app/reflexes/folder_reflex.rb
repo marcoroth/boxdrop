@@ -31,7 +31,7 @@ class FolderReflex < ApplicationReflex
 
     return if parent == folder
 
-    folder.update(parent: parent)
+    folder.update(parent:)
   end
 
   def change_name

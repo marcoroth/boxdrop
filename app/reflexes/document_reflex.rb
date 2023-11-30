@@ -28,7 +28,7 @@ class DocumentReflex < ApplicationReflex
   def move(attrs)
     folder = Folder.find_by(id: attrs[:folder])
 
-    Document.find(attrs[:document]).update(folder: folder)
+    Document.find(attrs[:document]).update(folder:)
   end
 
   def change_name
