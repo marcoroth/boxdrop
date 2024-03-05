@@ -2,7 +2,7 @@
   "name": "boxdrop",
   "private": true,
   "dependencies": {
-    "@hotwired/stimulus": "^3.2.1",
+    "@hotwired/stimulus": "^3.2.2",
     "@hotwired/stimulus-webpack-helpers": "^1.0.1",
     "@hotwired/turbo-rails": "^7.2.5",
     "@popperjs/core": "^2.11.6",
