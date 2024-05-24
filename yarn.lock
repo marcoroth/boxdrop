@@ -1024,12 +1024,7 @@
   resolved "https://registry.yarnpkg.com/@hotwired/stimulus-webpack-helpers/-/stimulus-webpack-helpers-1.0.1.tgz#4cd74487adeca576c9865ac2b9fe5cb20cef16dd"
   integrity sha512-wa/zupVG0eWxRYJjC1IiPBdt3Lruv0RqGN+/DTMmUWUyMAEB27KXmVY6a8YpUVTM7QwVuaLNGW4EqDgrS2upXQ==
 
-"@hotwired/stimulus@>= 3.0, < 4":
-  version "3.2.1"
-  resolved "https://registry.yarnpkg.com/@hotwired/stimulus/-/stimulus-3.2.1.tgz#e3de23623b0c52c247aba4cd5d530d257008676b"
-  integrity sha512-HGlzDcf9vv/EQrMJ5ZG6VWNs8Z/xMN+1o2OhV1gKiSG6CqZt5MCBB1gRg5ILiN3U0jEAxuDTNPRfBcnZBDmupQ==
-
-"@hotwired/stimulus@^3.2.2":
+"@hotwired/stimulus@^3", "@hotwired/stimulus@^3.2.2":
   version "3.2.2"
   resolved "https://registry.yarnpkg.com/@hotwired/stimulus/-/stimulus-3.2.2.tgz#071aab59c600fed95b97939e605ff261a4251608"
   integrity sha512-eGeIqNOQpXoPAIP7tC1+1Yc1yl1xnwYqg+3mzqxyrbE5pg5YFBZcA6YoTiByJB6DKAEsiWtl6tjTJS4IYtbB7A==
@@ -1116,15 +1111,20 @@
   resolved "https://registry.yarnpkg.com/@popperjs/core/-/core-2.11.6.tgz#cee20bd55e68a1720bdab363ecf0c821ded4cd45"
   integrity sha512-50/17A98tWUfQ176raKiOGXuYpLyyVMkxxG6oylzL3BPOlA6ADGdK7EYunSa4I064xerltq9TGXs8HmOk5E+vw==
 
-"@rails/actioncable@>= 6.0, < 8", "@rails/actioncable@^7.0":
-  version "7.0.4"
-  resolved "https://registry.yarnpkg.com/@rails/actioncable/-/actioncable-7.0.4.tgz#70a3ca56809f7aaabb80af2f9c01ae51e1a8ed41"
-  integrity sha512-tz4oM+Zn9CYsvtyicsa/AwzKZKL+ITHWkhiu7x+xF77clh2b4Rm+s6xnOgY/sGDWoFWZmtKsE95hxBPkgQQNnQ==
+"@rails/actioncable@^6 || ^7":
+  version "7.1.3"
+  resolved "https://registry.yarnpkg.com/@rails/actioncable/-/actioncable-7.1.3.tgz#4db480347775aeecd4dde2405659eef74a458881"
+  integrity sha512-ojNvnoZtPN0pYvVFtlO7dyEN9Oml1B6IDM+whGKVak69MMYW99lC2NOWXWeE3bmwEydbP/nn6ERcpfjHVjYQjA==
 
 "@rails/actioncable@^6.0.0":
   version "6.1.7"
   resolved "https://registry.yarnpkg.com/@rails/actioncable/-/actioncable-6.1.7.tgz#8b4506925d3f7146a70941e4db7ce9dda99f99ae"
   integrity sha512-F6S74NGpxhbbDRFsQFGYqefRfZPgYvePNtz9hHKYOqLturrsqrDoG+UcrxEGHsvqDUorMYfx4Wl3K8smmk/u2g==
+
+"@rails/actioncable@^7.0":
+  version "7.0.4"
+  resolved "https://registry.yarnpkg.com/@rails/actioncable/-/actioncable-7.0.4.tgz#70a3ca56809f7aaabb80af2f9c01ae51e1a8ed41"
+  integrity sha512-tz4oM+Zn9CYsvtyicsa/AwzKZKL+ITHWkhiu7x+xF77clh2b4Rm+s6xnOgY/sGDWoFWZmtKsE95hxBPkgQQNnQ==
 
 "@rails/activestorage@^6.0.0":
   version "6.1.7"
@@ -1888,10 +1888,10 @@ bytes@3.1.2:
   resolved "https://registry.yarnpkg.com/bytes/-/bytes-3.1.2.tgz#8b0beeb98605adf1b128fa4386403c009e0221a5"
   integrity sha512-/Nf7TyzTx6S3yRJObOAV7956r8cr2+Oj8AC5dt8wSP3BQAoeX58NoHyCU8P8zGkNXStjTSi6fzO6F0pBdcYbEg==
 
-cable_ready@5.0.0-pre10:
-  version "5.0.0-pre10"
-  resolved "https://registry.yarnpkg.com/cable_ready/-/cable_ready-5.0.0-pre10.tgz#e92ca5b481335dfff95ae148b7b0da86e98001c0"
-  integrity sha512-NevHcu5N5zzUKxyS/cYtkIY6mm7y1anQr9zxu65fqptMOBZS2fukXpz9YEn659yGKyqtCMVNrzkNtkICkBoGAQ==
+cable_ready@^5.0.5:
+  version "5.0.5"
+  resolved "https://registry.yarnpkg.com/cable_ready/-/cable_ready-5.0.5.tgz#45dd12ae5b3c5c53a1b42c10785e79ff87a5be22"
+  integrity sha512-qPC6zaI8h59BzMH3MxtpuMC+H33VJTA2eVddL6fZSWz01jJ2Y3okld01oYWQoKwE2yle/tvHbyuhoKxD4mhEuw==
   dependencies:
     morphdom "2.6.1"
 
@@ -6557,14 +6557,14 @@ statuses@2.0.1:
   resolved "https://registry.yarnpkg.com/statuses/-/statuses-1.5.0.tgz#161c7dac177659fd9811f43771fa99381478628c"
   integrity sha512-OpZ3zP+jT1PI7I8nemJX4AKmAX070ZkYPVWV/AaKTJl+tXCTGyVdC1a4SL8RUQYEwk/f34ZX8UTykN68FwrqAA==
 
-stimulus_reflex@3.5.0-pre10:
-  version "3.5.0-pre10"
-  resolved "https://registry.yarnpkg.com/stimulus_reflex/-/stimulus_reflex-3.5.0-pre10.tgz#5d907af1647d6fe49e4ee6b228867b9af817682e"
-  integrity sha512-Y4EeAvcXTa4Kkso8EVRh7ZqYAYO6PerAhmoV0i7KJ4nEAxwPQ7/z5ez8597qD2SnhR+/nsVAxj6yF5LcdNBb3Q==
+stimulus_reflex@^3.5.2:
+  version "3.5.2"
+  resolved "https://registry.yarnpkg.com/stimulus_reflex/-/stimulus_reflex-3.5.2.tgz#04d4f7a39c092902df29348ad0984333232f37dd"
+  integrity sha512-Mx3G16aydlm5UcmPYRg8vdR0r71ykyfxxPStjZkxmEqEVWWxbH5rTWwTTTS08GvGIf1lqcIwl/r2tkiX2qLKaA==
   dependencies:
-    "@hotwired/stimulus" ">= 3.0, < 4"
-    "@rails/actioncable" ">= 6.0, < 8"
-    cable_ready "5.0.0-pre10"
+    "@hotwired/stimulus" "^3"
+    "@rails/actioncable" "^6 || ^7"
+    cable_ready "^5.0.5"
 
 stream-browserify@^2.0.1:
   version "2.0.2"

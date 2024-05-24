@@ -12,7 +12,7 @@
     "bootstrap": "^5.2.3",
     "postcss": "^8.4.31",
     "sass": "^1.48.0",
-    "stimulus_reflex": "3.5.0-pre10"
+    "stimulus_reflex": "^3.5.2"
   },
   "version": "0.1.0",
   "devDependencies": {
