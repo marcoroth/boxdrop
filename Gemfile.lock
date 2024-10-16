@@ -113,14 +113,14 @@ GEM
     mini_portile2 (2.8.7)
     minitest (5.25.1)
     msgpack (1.6.0)
-    net-imap (0.4.10)
+    net-imap (0.4.17)
       date
       net-protocol
     net-pop (0.1.2)
       net-protocol
     net-protocol (0.2.2)
       timeout
-    net-smtp (0.4.0.1)
+    net-smtp (0.5.0)
       net-protocol
     nio4r (2.7.3)
     nokogiri (1.16.7)
