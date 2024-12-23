@@ -59,7 +59,12 @@ Rails.application.configure do
 
   # Use a different cache store in production.
   # config.cache_store = :mem_cache_store
-  config.cache_store = :redis_cache_store, { url: ENV.fetch('REDIS_URL', 'redis://localhost:6379/1') }
+  config.cache_store = :redis_cache_store, {
+    url: ENV.fetch('REDIS_URL', 'redis://localhost:6379/1'),
+    ssl_params: {
+      verify_mode: OpenSSL::SSL::VERIFY_NONE
+    }
+  }
 
   config.session_store :cache_store, key: '_session', compress: true, pool_size: 5, expire_after: 1.year
 
