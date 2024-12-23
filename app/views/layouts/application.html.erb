@@ -11,8 +11,7 @@
     <%= content_tag :link, '', rel: 'shortcut icon', href: '/favicon.ico' %>
 
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbo-track': 'reload' %>
-    <%= javascript_pack_tag 'application', 'data-turbo-track': 'reload' %>
-    <%= stylesheet_pack_tag 'application', 'data-turbo-track': 'reload' %>
+    <%= javascript_include_tag "application", "data-turbo-track": "reload", type: "module" %>
 
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/regular.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/solid.css">

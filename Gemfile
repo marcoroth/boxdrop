@@ -17,8 +17,8 @@ gem 'puma', '~> 5'
 # Use SCSS for stylesheets
 gem 'sass-rails', '>= 6'
 
-# Transpile app-like JavaScript. Read more: https://github.com/rails/webpacker
-gem 'webpacker', '~> 5.4.0'
+# Bundle and transpile JavaScript in Rails with esbuild, rollup.js, bun, or Webpack.
+gem 'jsbundling-rails', '~> 1.3'
 
 # The speed of a single-page web application without having to write any JavaScript
 gem 'turbo-rails'

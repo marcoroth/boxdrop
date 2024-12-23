@@ -1,8 +1,6 @@
-$primary: #44449b;
-$secondary: lightgrey;
-$success: #4fcb4a;
-$info: #9ecdfa;
+#app {
+  margin-bottom: 125px
+}
 
-$breadcrumb-divider: quote(">");
-
-@import 'bootstrap/scss/bootstrap';
+@import './bootstrap';
+@import './folders';

@@ -3,19 +3,21 @@
   "private": true,
   "dependencies": {
     "@hotwired/stimulus": "^3.2.2",
-    "@hotwired/stimulus-webpack-helpers": "^1.0.1",
     "@hotwired/turbo-rails": "^7.2.5",
     "@popperjs/core": "^2.11.6",
     "@rails/actioncable": "7.0.x",
     "@rails/activestorage": "7.0.x",
-    "@rails/webpacker": "^5.4.3",
     "bootstrap": "^5.2.3",
-    "postcss": "^8.4.31",
-    "sass": "^1.48.0",
+    "esbuild": "^0.24.2",
+    "esbuild-rails": "^1.0.7",
     "stimulus_reflex": "^3.5.3"
   },
   "version": "0.1.0",
+  "scripts": {
+    "build": "node esbuild.config.mjs"
+  },
   "devDependencies": {
-    "webpack-dev-server": "^3.11.0"
+    "chokidar": "^4.0.3",
+    "esbuild-sass-plugin": "^3.3.1"
   }
 }
