@@ -14,13 +14,13 @@
 ## Built with
 
 * Ruby 3.1.4
-* Rails 6.1
+* Rails 7.0
 * Stimulus 3.2
 * StimulusReflex 3.5
 * Turbo 7.2
 * Webpacker 5
-* Node
-* Yarn
+* Node 16
+* Yarn 1
 * PostgreSQL
 * Redis
 
