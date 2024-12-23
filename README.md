@@ -18,8 +18,8 @@
 * Stimulus 3.2
 * StimulusReflex 3.5
 * Turbo 7.2
-* Webpacker 5
-* Node 16
+* esbuild via ([jsbundling-rails](https://github.com/rails/jsbundling-rails) and [esbuild-rails](https://github.com/excid3/esbuild-rails))
+* Node 22
 * Yarn 1
 * PostgreSQL
 * Redis

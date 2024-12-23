@@ -2,7 +2,8 @@
 // Controller files must be named *_controller.js.
 
 import { application } from './application'
-import { definitionsFromContext } from '@hotwired/stimulus-webpack-helpers'
+import controllers from './**/*_controller.js'
 
-const context = require.context('controllers', true, /_controller\.js$/)
-application.load(definitionsFromContext(context))
+controllers.forEach((controller) => {
+  application.register(controller.name, controller.module.default)
+})
